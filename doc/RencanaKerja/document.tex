@@ -36,7 +36,7 @@
 	\newcommand{\@npm}{6182001062}
 	\newcommand{\@judultopik}{Visualisasi 3 Dimensi Anatomi Manusia} % Judul/topik anda
 	\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-	\newcommand{\tanggal}{18/02/20206}
+	\newcommand{\tanggal}{18/02/2026}
 	
 	% Dokumen hasil template ini harus dicetak bolak-balik !!!!
 	
@@ -47,20 +47,17 @@
 	\section{Deskripsi}
 %anatomi adalah dan terdiri dari apa saja (organ dalam, kerangka, kulit, 
 %apa itu 3D
-         Anatomi adalah disiplin ilmu yang secara harfiah mempelajari struktur tubuh manusia. Menurut buku Gray, "Basic Anatomy," istilah ini berasal dari kata Yunani "anatome" (memotong) dan "anatemnein" (membuka) (Drake, Vogl, and Mitchell, 2024). Anatomi umumnya mencakup struktur yang dapat diamati dengan mata telanjang dan di bawah mikroskop, yang membutuhkan pembesaran dan pengamatan. Anatomi manusia dibagi menjadi beberapa sistem kompleks, termasuk sistem rangka dan persendian, kulit (integumen) dan fasia, sistem kardiovaskular, sistem limfatik, dan sistem saraf.
+
+        Visualisasi pada dasarnya merupakan proses pengungkapan suatu gagasan, data, atau perasaan dengan menggunakan bentuk gambar, tulisan (kata dan angka), peta, hingga grafik yang bertujuan untuk menyederhanakan kompleksitas informasi. Dalam dunia medis, visualisasi menjadi instrumen krusial untuk memahami anatomi, yaitu disiplin ilmu yang secara harfiah mempelajari struktur tubuh manusia. Istilah ini berasal dari kata Yunani anatome yang berarti memotong dan anatemnein yang berarti membuka (Drake, Vogl, dan Mitchell, 2024). Anatomi manusia sendiri mencakup struktur yang dapat diamati dengan mata telanjang (gross anatomy) maupun melalui bantuan mikroskop (microscopic anatomy) yang terbagi ke dalam berbagai sistem organ kompleks seperti sistem rangka, kulit (integumen) dan fasia (selaput jaringan ikat tipis yang membungkus otot dan memisahkan kelompok satu dengan yang lain), kardiovaskular, limfatik, dan sistem saraf.
     
-        Untuk lebih memahami sistem-sistem ini, seni 3D kini tersedia. Teknologi ini menciptakan objek digital dengan parameter matematis seperti panjang, lebar, dan kedalaman dalam ruang koordinat Kartesius ($x, y, z$). Tidak seperti representasi visual statis, datar, dan dua dimensi, grafik 3D memungkinkan pengguna untuk melihat objek dalam tiga dimensi dari perspektif hingga 360 derajat, menampilkan reaksi realistis terhadap simulasi cahaya dan bayangan. 
-    
-        Kemajuan dalam teknologi komputer telah membawa inovasi signifikan dalam pendidikan, khususnya sebagai media pengajaran yang mampu merepresentasikan objek secara lebih realistis daripada metode konvensional. Idealnya, visualisasi 3D tidak boleh terbatas pada fungsi navigasi dasar seperti memperbesar, memperkecil, dan memutar, tetapi juga harus menyediakan informasi yang detail dan interaktif. Namun, pada kenyataannya, pembelajaran anatomi manusia digital masih sebagian besar terbatas pada fungsi standar ini. Keterbatasan ini menciptakan kesenjangan yang signifikan bagi pengguna, terutama mahasiswa kedokteran, dalam mengenali detail jaringan kompleks, memahami fungsi spesifik, dan bahkan mengidentifikasi potensi kelainan organ. 
-        Untuk mengatasi keterbatasan ini, aplikasi ini dikembangkan menggunakan teknologi WebGL dan \textit{library} Three.js. 
-    
-        WebGL (Web Graphics Library) adalah API JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa plug-in dengan memanfaatkan GPU untuk performa tinggi dan responsif melalui standar OpenGL ES. Namun, penulisan kode WebGL murni (GLSL) cukup kompleks dan memerlukan banyak instruksi bahkan untuk objek sederhana.
-        
-        Three.js adalah library JavaScript open-source berbasis web yang menyederhanakan pembuatan konten 3D di web melalui abstraksi tingkat tinggi. Dengan fitur siap pakai seperti geometri, kamera, pencahayaan, dan texture mapping, Three.js memungkinkan pengembang membuat elemen interaktif secara lebih mudah dan efisien tanpa harus menangani kompleksitas teknis shader dan manajemen GPU secara langsung.    
-        
-        Mempelajari sistem anatomi tubuh manusia yang mencakup berbagai sistem organ beserta struktur dan fungsinya dapat dilakukan dengan berkolaborasi bersama teman mahasiswa kedokteran agar materi yang disusun lebih akurat dan komprehensif, kemudian diwujudkan dalam sebuah laman interaktif 3D yang menampilkan anatomi manusia, di mana setiap komponen atau organ dapat diklik untuk membuka halaman detail yang berisi judul artikel, penjelasan lengkap mengenai struktur dan fungsi organ tersebut, dilengkapi gambar-gambar pendukung serta tautan untuk mempelajari materi lebih lanjut.
-    
-        Pengembangan aplikasi ini juga mengedepankan akurasi materi dengan melibatkan kolaborasi bersama mahasiswa kedokteran. Tujuannya adalah untuk mewujudkan sebuah laman interaktif di mana setiap komponen organ dapat diinteraksi untuk menampilkan informasi komprehensif, mulai dari judul artikel, penjelasan struktur dan fungsi, hingga gambar pendukung dan tautan materi lanjutan.
+         Selama ini, visualisasi anatomi lebih sering disajikan dalam bentuk dua dimensi (2D) melalui buku teks medis atau penggunaan X-ray sebagai metode pemindaian konvensional. Namun, teknologi ini telah berkembang pesat seiring munculnya MRI dan CT Scan yang mampu memberikan gambaran lapisan tubuh yang lebih mendalam. Evolusi ini kemudian mendorong sistem pembelajaran anatomi untuk bertransformasi ke dalam objek 3D digital. Berbeda dengan representasi statis dan datar, grafik 3D dibangun berdasarkan parameter matematis seperti panjang, lebar, dan kedalaman dalam ruang koordinat Kartesius ($x, y, z$). Hal ini memungkinkan pengguna untuk mengeksplorasi objek dari perspektif penuh hingga 360 derajat, lengkap dengan reaksi realistis terhadap simulasi cahaya dan bayangan yang mempertegas tekstur serta volume organ.
+
+         Meskipun saat ini telah tersedia berbagai platform aplikasi dengan fitur visualisasi serupa, tantangan utama yang dihadapi pengguna adalah model layanan yang sebagian besar bersifat berbayar serta sulit untuk diakses secara bebas \footnote{Anatomy 3D Atlas dan Anatomy Learning By Dr. Blanco (diakses melalui Google Play Store).} . Hambatan biaya dan eksklusivitas platform ini dapat menjadi kendala bagi mahasiswa maupun masyarakat umum yang membutuhkan referensi anatomi 3D. Untuk mengatasi hambatan tersebut, sebuah web interaktif dikembangkan dengan memanfaatkan teknologi WebGL dan library Three.js guna memberikan pengalaman eksplorasi yang mendalam, responsif, dan mudah diakses langsung melalui \textit{browser}. Pendekatan berbasis web ini bertujuan untuk meruntuhkan batasan akses yang ada pada aplikasi konvensional, sehingga visualisasi anatomi berkualitas  dapat dinikmati tanpa perlu melakukan instalasi perangkat lunak tambahan maupun mengeluarkan biaya langganan.
+         
+         Secara teknis, WebGL (Web Graphics Library) berperan sebagai \textit{API} JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa memerlukan plug-in tambahan dengan memanfaatkan unit pemrosesan grafis (GPU). Namun, penulisan kode WebGL murni menggunakan GLSL (OpenGL Shading Language)  kompleks. Oleh karena itu, digunakan Three.js sebagai library open-source berbasis WebGL yang menyederhanakan pembuatan konten 3D. Melalui fitur siap pakai seperti geometri, kamera, pencahayaan, dan texture mapping, Three.js memungkinkan pengembang menciptakan elemen interaktif secara efisien tanpa harus menangani kerumitan manajemen GPU secara langsung.
+         
+   
+        %Pengembangan aplikasi ini juga mengedepankan akurasi materi dengan melibatkan kolaborasi bersama mahasiswa kedokteran. Tujuannya adalah untuk mewujudkan sebuah laman interaktif di mana setiap komponen organ dapat diinteraksi untuk menampilkan informasi komprehensif, mulai dari judul artikel, penjelasan struktur dan fungsi, hingga gambar pendukung dan tautan materi lanjutan.
 
 	
 	\section{Rumusan Masalah}
@@ -68,7 +65,7 @@
 	%Tuliskan rumusan dari masalah yang akan anda bahas pada tugas akhir ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan penomoran untuk menuliskan rumusan masalah ini.
     \begin{enumerate}
         \item Bagaimana mengimplementasikan visualisasi anatomi manusia 3D berbasis web menggunakan teknologi WebGL dan library Three.js agar sistem dapat berjalan secara responsif?
-        \item Bagaimana mekanisme perancangan fitur \textit{Isolate Mode} yang efektif saat pengguna melakukan interaksi (klik/zoom in) pada organ spesifik dalam model anatomi?
+        \item Bagaimana mekanisme perancangan fitur yang efek terisolasi yang efektif saat pengguna melakukan interaksi (klik/zoom in) pada organ spesifik dalam model anatomi?
     \end{enumerate}
     
 
@@ -88,64 +85,82 @@
 	Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 	\begin{itemize}
 		\item Pengguna dapat melihat visualisasi anatomi manusia 3D manusia dengan fitur navigasi dasar.
-        \item Pengguna dapat melihat organ secara spesifik dan isolate saat objek di klik
-        \item Pengguna dapat melihat artikel saat mengklik organ spesifik
-        \item Pengguna dapat melihat list artiker saat zoom in pada organ
+        \item Pengguna dapat melihat organ secara spesifik dan terisolasi saat objek di klik.
+        \item Pengguna dapat melihat artikel saat mengklik organ spesifik.
+        \item Pengguna dapat melihat list artikel saat zoom in pada organ.
 		
 	\end{itemize}
 	
 	\section{Detail Pengerjaan Tugas Akhir}
-	Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
+
 	
 	Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Melakukan studi literalatur terkait anatomi manusia, meliputi organ, fungsi dan kelainannya beserta deformasi dan tektur ya.
-        \item Mempelajari WebGL sebagai Application Programming Interface (API) untuk menampilkan grafis 3D pada web browser.
-        \item Mempelajari library Three.js.
-        \item Merancang tampilan web
+		\item Melakukan studi litelatur mengenai anatomi manusia, meliputi organ, fungsi dan kelainannya.
+        \item Melakukan studi litelatur mengenai WebGL sebagai \textit{Application Programming Interface} (API) untuk menampilkan grafis 3D pada web browser.
+        \item Melakukan studi litelatur mengenai Three.js sebagai library WebGL.
+        \item Merancang situs web yang akan dibangun.
+        \item Mengimplementasikan situs web.
+        \item Melakukan pengujian terhadap situs web yang telah dibangun.
 		\item Menulis dokumen tugas akhir.
 	\end{enumerate}
 	
 	\section{Rencana Kerja}
 	Rincian capaian yang direncanakan di Tugas Akhir 1 adalah sebagai berikut:
 	\begin{enumerate}
-		\item Studi litelatur terkait anatomi manusia
-        \item Mempelajari WebGL
-		\item Mempelajari library Three.js
-        \item Mempelajari penggunaan Blender
+		\item Melakukan studi litelatur mengenai anatomi manusia, meliputi organ, fungsi dan kelainannya.
+         \item Melakukan studi litelatur mengenai WebGL sebagai \textit{Application Programming Interface} (API) untuk menampilkan grafis 3D pada web browser.
+		\item Melakukan studi litelatur mengenai Three.js sebagai library WebGL.
 		\item Menulis dokumen tugas akhir
 	\end{enumerate}
 	
 	Sedangkan yang akan diselesaikan di Tugas Akhir 2 adalah sebagai berikut:
 	\begin{enumerate}
-		\item Merancang tampilan halaman 
-        \item Implementasi program 
+        \item Merancang perangkat lunak
+        \item Mengimplementasikan situs web.
+        \item  Melakukan pengujian terhadap situs web yang telah dibangun.
 		\item Menulis dokumen tugas akhir
 	\end{enumerate}
-	
-	\vspace{1cm}
-	\centering Bandung, \tanggal\\
-	\vspace{2cm} \nama \\ 
-	\vspace{1cm}
-	
-	Menyetujui, \\
-	\ifdefstring{\jumpemb}{2}{
-		\vspace{1.5cm}
-		\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
-		\begin{minipage}[b]{0.45\linewidth}
-			% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
-			\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Utama
-		\end{minipage} \hspace{0.5cm}
-		\begin{minipage}[b]{0.45\linewidth}
-			% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
-			\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Pendamping
-		\end{minipage}
-		\vspace{0.5cm}
-	}{
-		% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
-		\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
-	}
-
-
     
+    \begin{center}
+    Bandung, \tanggal
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=0.25\textwidth]{TTD_Afifah.png}
+    
+    \nama
+    
+    \vspace{1cm}
+
+Menyetujui,
+
+\ifdefstring{\jumpemb}{2}{
+    \vspace{1.5cm}
+
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \vspace{2cm}
+        Nama: \makebox[3cm]{\hrulefill}\\
+        Pembimbing Utama
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \vspace{2cm}
+        Nama: \makebox[3cm]{\hrulefill}\\
+        Pembimbing Pendamping
+    \end{minipage}
+
+}{
+    \vspace{2cm}
+
+    Pascal Alfadian Nugroho, S.Kom., M.Comp.\\
+    Pembimbing Tunggal
+}
+\end{center}
 \end{document}
+
+
+
+
