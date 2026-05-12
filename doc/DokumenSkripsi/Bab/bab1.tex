@@ -1,200 +1,72 @@
-%versi 3 (22-07-2020)
-\chapter{Landasan Teori}
-\label{chap:teori}
+%versi 2 (8-10-2016) 
 
-\section{Skripsi}
-\label{sec:skripsi} 
- 
-Bab ini berisi penjelasan mengenai teori-teori yang menjadi dasar penelitian ini, seperti WebGL dan Three.js \textit{library}.
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+        Visualisasi pada dasarnya merupakan proses pengungkapan suatu gagasan, data, atau perasaan dengan menggunakan bentuk gambar, tulisan (kata dan angka), peta, hingga grafik yang bertujuan untuk menyederhanakan kompleksitas informasi. Dalam dunia medis, visualisasi menjadi instrumen krusial untuk memahami anatomi, yaitu disiplin ilmu yang secara harfiah mempelajari struktur tubuh manusia. Struktur tubuh manusia atau yang biasa disebut anatomi ini berasal dari kata Yunani \textit{anatome} yang berarti memotong dan \textit{anatemnein} yang berarti membuka ~\cite{richard:12:grays}. Anatomi manusia sendiri mencakup struktur yang dapat diamati dengan mata telanjang (\textit{gross anatomy}) maupun melalui bantuan mikroskop (\textit{microscopic anatomy}) yang terbagi ke dalam berbagai sistem organ kompleks seperti sistem rangka, kulit (integumen) dan fasia (selaput jaringan ikat tipis yang membungkus otot dan memisahkan kelompok satu dengan yang lain), kardiovaskular, limfatik, dan sistem saraf.
+    
+         Selama ini, visualisasi anatomi lebih sering disajikan dalam bentuk dua dimensi (2D) melalui buku teks medis atau penggunaan X-ray sebagai metode pemindaian konvensional. Namun, teknologi ini telah berkembang pesat seiring munculnya MRI dan CT Scan yang mampu memberikan gambaran lapisan tubuh yang lebih mendalam. Evolusi ini kemudian mendorong sistem pembelajaran anatomi untuk bertransformasi ke dalam objek 3D digital. Berbeda dengan representasi statis dan datar, grafik 3D dibangun berdasarkan parameter matematis seperti panjang, lebar, dan kedalaman dalam ruang koordinat Kartesius ($x, y, z$). Hal ini memungkinkan pengguna untuk mengeksplorasi objek dari perspektif penuh hingga 360 derajat, lengkap dengan reaksi realistis terhadap simulasi cahaya dan bayangan yang mempertegas tekstur serta volume organ.
 
-\section{\LaTeX}
-\label{sec:latex}
+         Meskipun saat ini telah tersedia berbagai platform aplikasi dengan fitur visualisasi serupa, tantangan utama yang dihadapi pengguna adalah model layanan yang sebagian besar bersifat berbayar serta sulit untuk diakses secara bebas .\footnote{Catfish Animation Studio, \textit{Anatomy 3D Atlas}, diakses dari \url{https://play.google.com/store/apps/details?id=com.catfishanimationstudio.MuscularSystemLite} pada 10 Maret 2026.}\footnote{Dr. Blanco, \textit{Anatomy Learning}, diakses dari \url {ttps://play.google.com/store/apps/details?id=com.AnatomyLearning.Anatomy3DViewer3&hl=en} pada 10 Maret 2026}. Hambatan biaya dan eksklusivitas platform ini dapat menjadi kendala bagi mahasiswa maupun masyarakat umum yang membutuhkan referensi anatomi 3D. Untuk mengatasi hambatan tersebut, sebuah web interaktif dikembangkan dengan memanfaatkan teknologi WebGL dan \textit{library} Three.js guna memberikan pengalaman eksplorasi yang mendalam, responsif, dan mudah diakses langsung melalui \textit{browser}. Pendekatan berbasis web ini bertujuan untuk meruntuhkan batasan akses yang ada pada aplikasi konvensional, sehingga visualisasi anatomi berkualitas  dapat dinikmati tanpa perlu melakukan instalasi perangkat lunak tambahan maupun mengeluarkan biaya langganan.
+         
+         Secara teknis, WebGL (\textit{Web Graphics Library}) berperan sebagai \textit{API} JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa memerlukan \textit{plug-in} tambahan dengan memanfaatkan unit pemrosesan grafis (GPU). Namun, penulisan kode WebGL murni menggunakan GLSL (\textit{OpenGL Shading Language})  kompleks. Oleh karena itu, digunakan Three.js sebagai \textit{library open-source} berbasis WebGL yang menyederhanakan pembuatan konten 3D. Melalui fitur siap pakai seperti geometri, kamera, pencahayaan, dan \textit{texture mapping}, Three.js memungkinkan pengembang menciptakan elemen interaktif secara efisien tanpa harus menangani kerumitan manajemen GPU secara langsung.
+        
 
-Mengapa menggunakan \LaTeX{} untuk buku skripsi dan apa keunggulan/kerugiannya bagi mahasiswa dan pembuat template. 
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+      \begin{enumerate}
+        \item Bagaimana mengimplementasikan visualisasi anatomi manusia 3D berbasis web menggunakan teknologi WebGL dan \textit{library} Three.js agar sistem dapat berjalan secara responsif?
+        \item Bagaimana mekanisme perancangan fitur yang efek terisolasi yang efektif saat pengguna melakukan interaksi (klik/\textit{zoom in}) pada organ spesifik dalam model anatomi?
+    \end{enumerate}
 
-\dtext{13-14}
+\section{Tujuan}
+\label{sec:tujuan}
+    \begin{enumerate}
+        \item Merancang dan mengimplementasikan sistem visualisasi anatomi manusia 3D yang berbasis web dengan memanfaatkan teknologi WebGL dan \textit{library} Three.js agar dapat diakses secara responsif
+        \item Merancang dan membangun fitur \textit{Isolate Mode} yang efektif saat pengguna melakukan interaksi (klik/zoom in) pada organ spesifik dalam model anatomi tersebut 
+    \end{enumerate}
 
+\section{Batasan Masalah}
+\label{sec:batasan}
+Akan dituliskan selanjutnya
 
-\section{Template Skripsi FTIS UNPAR}
-\label{sec:template}
- 
-Akan dipaparkan bagaimana menggunakan template ini, termasuk petunjuk singkat membuat referensi, gambar dan tabel.
-Juga hal-hal lain yang belum terpikir sampai saat ini. 
- 
-\dtext{15-16}
-
-\subsection{Tabel}  
-Berikut adalah contoh pembuatan tabel. 
-Penempatan tabel dan gambar secara umum diatur secara otomatis oleh \LaTeX{}, perhatikan contoh di file bab2.tex untuk melihat bagaimana cara memaksa tabel ditempatkan sesuai keinginan kita.
-
-Perhatikan bawa berbeda dengan penempatan judul gambar gambar, keterangan tabel harus diletakkan di atas tabel!!
-Lihat Tabel~\ref{tab:contoh1} berikut ini:
-
-\begin{table}[H] %atau h saja untuk "kira kira di sini"
-	\centering 
-	\caption{Tabel contoh}
-	\label{tab:contoh1}
-	\begin{tabular}{cccc}
-		\toprule
-		& $v_{start}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-
-		\midrule
-		$\tau_{1}$ & 1 & 12& 20\\
-		$\tau_{2}$ & 1 &  & 20\\
-		$\tau_{3}$ & 1 & 9 & 20\\
-		$\tau_{4}$ & 1 &  & 20\\
-
-		\bottomrule
-		
-	\end{tabular} 
-\end{table}
-Tabel~\ref{tab:cthwarna1} dan Tabel~\ref{tab:cthwarna2} berikut ini adalah tabel dengan sel yang berwarna dan ada dua tabel yang bersebelahan. 
-\begin{table}[H]
-	\begin{minipage}[c]{0.49\linewidth}
-		\centering
-		\caption{Tabel bewarna(1)}
-		\label{tab:cthwarna1}
-		\begin{tabular}{ccccc}
-			\toprule
-			 & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-			
-			\midrule
-			$\tau_{1}$ & 1 & 5 \cellcolor{green}& 12& 20\\
-			$\tau_{2}$ & 1 & 8 \cellcolor{green}& & 20\\
-			$\tau_{3}$ & 1 & 2/8/17 \cellcolor{green}& 9 & 20\\
-			$\tau_{4}$ & 1 & \cellcolor{red}& & 20\\
-			
-			\bottomrule
-
-		\end{tabular}
-	\end{minipage}
-	\begin{minipage}[c]{0.49\linewidth}
-		
-		\centering 
-		\caption{Tabel bewarna(2)}
-		\label{tab:cthwarna2}
-		\begin{tabular}{ccccc}
-			\toprule
-			 & $v_{start}$ & $\mathcal{S}_{1}$ & $\mathcal{S}_{2}$ & $v_{end}$\\
-			
-			\midrule
-			$\tau_{1}$ & 1 & 12& 5 \cellcolor{red} &20\\
-			$\tau_{2}$ & 1 &  &  8 \cellcolor{green} &20\\
-			$\tau_{3}$ & 1 & 9 & 2/8/17 \cellcolor{green} &20\\
-			$\tau_{4}$ & 1 &   & \cellcolor{red} &20\\
-			
-			\bottomrule
-		
-		\end{tabular}
-	\end{minipage}
-\end{table}
-
- 
-\subsection{Kutipan}
-\label{subs:kutipan} 
-Berikut contoh kutipan dari berbagai sumber, untuk keterangan lebih lengkap, silahkan membaca file referensi.bib yang disediakan juga di template ini.
-Contoh kutipan:
-\begin{itemize}
-	\item Buku:~\cite{berg:08:compgeom} 
-	\item Bab dalam buku:~\cite{kreveld:04:GIS}
-	\item Artikel dari Jurnal:~\cite{buchin:13:median}
-	\item Artikel dari prosiding seminar/konferensi:~\cite{kreveld:11:median}
-	\item Skripsi/Thesis/Disertasi:~\cite{lionov:02:animasi}~\cite{wiratma:10:following}~\cite{wiratma:22:later}
-	\item Technical/Scientific Report:~\cite{kreveld:07:watertight}
-	\item RFC (Request For Comments):~\cite{RFC1654}
-	\item Technical Documentation/Technical Manual:~\cite{Z.500}~\cite{unicode:16:stdv9}~\cite{google:16:and7}
-	\item Paten:~\cite{webb:12:comm}
-	\item Tidak dipublikasikan:~\cite{wiratma:09:median}~\cite{lionov:11:cpoly}
-	\item Laman web:~\cite{erickson:03:cgmodel}  
-	\item Lain-lain:~\cite{agung:12:tango}
-\end{itemize}    
-  
-\subsection{Gambar}
-
-Pada hampir semua editor, penempatan gambar di dalam dokumen \LaTeX{} tidak dapat dilakukan melalui proses {\it drag and drop}.
-Perhatikan contoh pada file bab2.tex untuk melihat bagaimana cara menempatkan gambar.
-Beberapa hal yang harus diperhatikan pada saat menempatkan gambar:
-\begin{itemize}
-	\item Setiap gambar {\bf harus} diacu di dalam teks (gunakan {\it field} {\sc label})
-	\item {\it Field} {\sc caption} digunakan untuk teks pengantar pada gambar. Terdapat dua bagian yaitu yang ada di antara tanda $[$ dan $]$ dan yang ada di antara tanda $\{$ dan $\}$. Yang pertama akan muncul di Daftar Gambar, sedangkan yang kedua akan muncul di teks pengantar gambar. Untuk skripsi ini, samakan isi keduanya.
-	\item Jenis file yang dapat digunakan sebagai gambar cukup banyak, tetapi yang paling populer adalah tipe {\sc png} (lihat Gambar~\ref{fig:ularpng}), tipe {\sc jpg} (Gambar~\ref{fig:ularjpg}) dan tipe {\sc pdf} (Gambar~\ref{fig:ularpdf})
-	\item Besarnya gambar dapat diatur dengan {\it field} {\sc scale}.
-	\item Penempatan gambar diatur menggunakan {\it placement specifier} (di antara tanda  $[$ dan $]$ setelah deklarasi gambar.
-	Yang umum digunakan adalah {\bf H} untuk menempatkan gambar {\bf sesuai} penempatannya di file .tex atau  {\bf h} yang berarti "kira-kira" di sini. \\
-	Jika tidak menggunakan {\it placement specifier}, \LaTeX{} akan menempatkan gambar secara otomatis untuk menghindari bagian kosong pada dokumen anda.
-	Walaupun cara ini sangat mudah, hindarkan terjadinya penempatan dua gambar secara berurutan. 	
-	\begin{itemize}
-		\item Gambar~\ref{fig:ularpng} ditempatkan di bagian atas halaman, walaupun penempatannya dilakukan setelah penulisan 3 paragraf setelah penjelasan ini.
-		\item Gambar~\ref{fig:ularjpg} dengan skala 0.5 ditempatkan di antara dua buah paragraf. Perhatikan penulisannya di dalam file bab2.tex!
-		\item Gambar~\ref{fig:ularpdf} ditempatkan menggunakan {\it specifier} {\bf h}.
-	\end{itemize}
-\end{itemize}
- 
-\dtext{17-18}
-\begin{figure} 
-	\centering  
-	\includegraphics[scale=1]{ular-png}  
-	\caption[Gambar {\it Serpentes} dalam format png]{Gambar {\it Serpentes} dalam format png} 
-	\label{fig:ularpng} 
-\end{figure} 
-
-\dtext{19-20}
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.5]{ular-jpg}  
-	\caption[Ular kecil]{Ular kecil} 
-	\label{fig:ularjpg} 
-\end{figure} 
-\dtext{21-22}
-
-\begin{figure}[ht] 
-	\centering  
-	\includegraphics[scale=1]{ular-pdf}  
-	\caption[ {\it Serpentes} betina]{ {\it Serpentes} jantan} 
-	\label{fig:ularpdf} 
-\end{figure} 
- 
-\subsection{Kode Program}
-
-Kode program dalam bahasa tertentu seringkali harus ditulis di dalam bab, bukan hanya dilampirkan di bagian Lampiran. 
-Kode~\ref{kode:aneh} menampilkan penggunaan karakter-karakter yang umum digunakan dalam sebuah program yang ditulis dengan bahasa C.
+\section{Metodologi}
+\label{sec:metlit}
+    \begin{enumerate}
+		\item Melakukan studi litelatur mengenai anatomi manusia, meliputi organ, fungsi dan kelainannya.
+        \item Melakukan studi litelatur mengenai WebGL sebagai \textit{Application Programming Interface} (API) untuk menampilkan grafis 3D pada web browser.
+        \item Melakukan studi litelatur mengenai Three.js sebagai \textit{library} WebGL.
+        \item Merancang situs web yang akan dibangun.
+        \item Mengimplementasikan situs web.
+        \item Melakukan pengujian terhadap situs web yang telah dibangun.
+		\item Menulis dokumen tugas akhir.
+	\end{enumerate}
 
 
-\begin{lstlisting}[language=Java, caption=Kode untuk menampilkan karakter-karakter aneh, label=kode:aneh]
-// This does not make algorithmic sense, 
-// but it shows off significant programming characters.
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
 
-#include<stdio.h>
+Sistematika pembahasan dalam dokumen ini disusun untuk memberikan gambaran menyeluruh mengenai alur penelitian yang dilakukan. Adapun urutan pembahasannya adalah sebagai berikut:
 
-void myFunction( int input, float* output ) {
-	switch ( array[i] ) {
-		case 1: // This is silly code
-			if ( a >= 0 || b <= 3 && c != x )
-				*output += 0.005 + 20050;
-			char = 'g';
-			b = 2^n + ~right_size - leftSize * MAX_SIZE;
-			c = (--aaa + &daa) / (bbb++ - ccc % 2 );
-			strcpy(a,"hello $@?"); 
-	}
-	count = ~mask | 0x00FF00AA;
-}
+\begin{description}
+    \item[\textbf{Bab 1: Pendahuluan}] \hfill \\
+    Bab ini menguraikan latar belakang penelitian, rumusan masalah, tujuan yang ingin dicapai, batasan masalah, metodologi penelitian yang digunakan, serta sistematika pembahasan secara keseluruhan.
 
-// Fonts for Displaying Program Code in LATEX
-// Adrian P. Robson, nepsweb.co.uk
-// 8 October 2012
-// http://nepsweb.co.uk/docs/progfonts.pdf
+    \item[\textbf{Bab 2: Landasan Teori}] \hfill \\
+    Bab ini menyajikan teori-teori dasar dan referensi ilmiah yang mendukung penelitian, meliputi konsep dasar \textit{WebGL}, penggunaan \textit{library} \textit{Three.js}, serta tinjauan medis mengenai anatomi manusia yang menjadi objek visualisasi.
 
-\end{lstlisting}
+    \item[\textbf{Bab 3: Analisis}] \hfill \\
+    Bab ini memaparkan hasil analisis terhadap kebutuhan sistem, pemilihan model 3D yang digunakan, serta tinjauan terkait lisensi model agar sesuai dengan etika penggunaan aset digital.
 
-\subsection{Notasi}
+    \item[\textbf{Bab 4: Perancangan}] \hfill \\
+    Bab ini menjelaskan tahap perancangan dari pengembangan perangkat lunak.
 
-Simbol-simbol (matematika) yang sering digunakan sepanjang penulisan skripsi, dapat dimasukkan ke dalam ``Daftar Notasi''. Daftar ini ada di halaman depan sebelum Bab~\ref{chap:intro}.
-Cara memasukkan sebuah simbol ke dalam Daftar Notasi adalah menggunakan perintah \verb|\nomenclature|. Contoh:
-\begin{center}
-    \verb|\nomenclature[]{$A$}{luas kandang ular}|    
-\end{center}
-\nomenclature[]{$A$}{luas kandang ular}
-\nomenclature[]{$n$}{banyaknya ular}
-\nomenclature[]{$k$}{jumlah kepala per seekor ular\nomrefpage}
-Argumen opsional digunakan untuk mengurutkan notasi. Silahkan lihat sendiri dokumentasi package \verb|nomencl|
+    \item[\textbf{Bab 5: Implementasi dan Pengujian}] \hfill \\
+    Bab ini berisi detail teknis mengenai realisasi rancangan ke dalam kode program (implementasi). Selain itu, bab ini menyajikan hasil pengujian fungsionalitas perangkat lunak yang dilakukan bersama mahasiswa kedokteran sebagai pengguna ahli.
+
+    \item[\textbf{Bab 6: Kesimpulan dan Saran}] \hfill \\
+    Bab ini merangkum hasil penelitian yang telah dilakukan serta memberikan saran-saran strategis untuk pengembangan perangkat lunak visualisasi anatomi manusia di masa mendatang.
+\end{description}
 

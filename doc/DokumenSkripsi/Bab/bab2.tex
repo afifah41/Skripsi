@@ -2,201 +2,404 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-\section{Skripsi}
-\label{sec:skripsi} 
- 
-Rencananya akan diisi dengan penjelasan umum mengenai buku skripsi.
 
-\dtext{11-12} 
+Bab ini berisi penjelasan mengenai teori-teori yang menjadi dasar penelitian ini, seperti WebGL, Three.js \textit{library} dan anatomi manusia .
 
-\section{\LaTeX}
-\label{sec:latex}
+\section {WebGL}
+\label{sec:WebGL}
 
-Mengapa menggunakan \LaTeX{} untuk buku skripsi dan apa keunggulan/kerugiannya bagi mahasiswa dan pembuat template. 
-
-\dtext{13-14}
-
-
-\section{Template Skripsi FTIS UNPAR}
-\label{sec:template}
- 
-Akan dipaparkan bagaimana menggunakan template ini, termasuk petunjuk singkat membuat referensi, gambar dan tabel.
-Juga hal-hal lain yang belum terpikir sampai saat ini. 
- 
-\dtext{15-16}
-
-\subsection{Tabel}  
-Berikut adalah contoh pembuatan tabel. 
-Penempatan tabel dan gambar secara umum diatur secara otomatis oleh \LaTeX{}, perhatikan contoh di file bab2.tex untuk melihat bagaimana cara memaksa tabel ditempatkan sesuai keinginan kita.
-
-Perhatikan bawa berbeda dengan penempatan judul gambar gambar, keterangan tabel harus diletakkan di atas tabel!!
-Lihat Tabel~\ref{tab:contoh1} berikut ini:
-
-\begin{table}[H] %atau h saja untuk "kira kira di sini"
-	\centering 
-	\caption{Tabel contoh}
-	\label{tab:contoh1}
-	\begin{tabular}{cccc}
-		\toprule
-		& $v_{start}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-
-		\midrule
-		$\tau_{1}$ & 1 & 12& 20\\
-		$\tau_{2}$ & 1 &  & 20\\
-		$\tau_{3}$ & 1 & 9 & 20\\
-		$\tau_{4}$ & 1 &  & 20\\
-
-		\bottomrule
-		
-	\end{tabular} 
-\end{table}
-Tabel~\ref{tab:cthwarna1} dan Tabel~\ref{tab:cthwarna2} berikut ini adalah tabel dengan sel yang berwarna dan ada dua tabel yang bersebelahan. 
-\begin{table}[H]
-	\begin{minipage}[c]{0.49\linewidth}
-		\centering
-		\caption{Tabel bewarna(1)}
-		\label{tab:cthwarna1}
-		\begin{tabular}{ccccc}
-			\toprule
-			 & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-			
-			\midrule
-			$\tau_{1}$ & 1 & 5 \cellcolor{green}& 12& 20\\
-			$\tau_{2}$ & 1 & 8 \cellcolor{green}& & 20\\
-			$\tau_{3}$ & 1 & 2/8/17 \cellcolor{green}& 9 & 20\\
-			$\tau_{4}$ & 1 & \cellcolor{red}& & 20\\
-			
-			\bottomrule
-
-		\end{tabular}
-	\end{minipage}
-	\begin{minipage}[c]{0.49\linewidth}
-		
-		\centering 
-		\caption{Tabel bewarna(2)}
-		\label{tab:cthwarna2}
-		\begin{tabular}{ccccc}
-			\toprule
-			 & $v_{start}$ & $\mathcal{S}_{1}$ & $\mathcal{S}_{2}$ & $v_{end}$\\
-			
-			\midrule
-			$\tau_{1}$ & 1 & 12& 5 \cellcolor{red} &20\\
-			$\tau_{2}$ & 1 &  &  8 \cellcolor{green} &20\\
-			$\tau_{3}$ & 1 & 9 & 2/8/17 \cellcolor{green} &20\\
-			$\tau_{4}$ & 1 &   & \cellcolor{red} &20\\
-			
-			\bottomrule
-		
-		\end{tabular}
-	\end{minipage}
-\end{table}
-
- 
-\subsection{Kutipan}
-\label{subs:kutipan} 
-Berikut contoh kutipan dari berbagai sumber, untuk keterangan lebih lengkap, silahkan membaca file referensi.bib yang disediakan juga di template ini.
-Contoh kutipan:
+WebGL (\textit{Web Graphics Library}) berperan sebagai \textit{API} JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa memerlukan \textit{plug-in }tambahan dengan memanfaatkan unit pemrosesan grafis (GPU). 
+\subsection{Tipe Data WebGL}
 \begin{itemize}
-	\item Buku:~\cite{berg:08:compgeom} 
-	\item Bab dalam buku:~\cite{kreveld:04:GIS}
-	\item Artikel dari Jurnal:~\cite{buchin:13:median}
-	\item Artikel dari prosiding seminar/konferensi:~\cite{kreveld:11:median}
-	\item Skripsi/Thesis/Disertasi:~\cite{lionov:02:animasi}~\cite{wiratma:10:following}~\cite{wiratma:22:later}
-	\item Technical/Scientific Report:~\cite{kreveld:07:watertight}
-	\item RFC (Request For Comments):~\cite{RFC1654}
-	\item Technical Documentation/Technical Manual:~\cite{Z.500}~\cite{unicode:16:stdv9}~\cite{google:16:and7}
-	\item Paten:~\cite{webb:12:comm}
-	\item Tidak dipublikasikan:~\cite{wiratma:09:median}~\cite{lionov:11:cpoly}
-	\item Laman web:~\cite{erickson:03:cgmodel}  
-	\item Lain-lain:~\cite{agung:12:tango}
-\end{itemize}    
-  
-\subsection{Gambar}
-
-Pada hampir semua editor, penempatan gambar di dalam dokumen \LaTeX{} tidak dapat dilakukan melalui proses {\it drag and drop}.
-Perhatikan contoh pada file bab2.tex untuk melihat bagaimana cara menempatkan gambar.
-Beberapa hal yang harus diperhatikan pada saat menempatkan gambar:
-\begin{itemize}
-	\item Setiap gambar {\bf harus} diacu di dalam teks (gunakan {\it field} {\sc label})
-	\item {\it Field} {\sc caption} digunakan untuk teks pengantar pada gambar. Terdapat dua bagian yaitu yang ada di antara tanda $[$ dan $]$ dan yang ada di antara tanda $\{$ dan $\}$. Yang pertama akan muncul di Daftar Gambar, sedangkan yang kedua akan muncul di teks pengantar gambar. Untuk skripsi ini, samakan isi keduanya.
-	\item Jenis file yang dapat digunakan sebagai gambar cukup banyak, tetapi yang paling populer adalah tipe {\sc png} (lihat Gambar~\ref{fig:ularpng}), tipe {\sc jpg} (Gambar~\ref{fig:ularjpg}) dan tipe {\sc pdf} (Gambar~\ref{fig:ularpdf})
-	\item Besarnya gambar dapat diatur dengan {\it field} {\sc scale}.
-	\item Penempatan gambar diatur menggunakan {\it placement specifier} (di antara tanda  $[$ dan $]$ setelah deklarasi gambar.
-	Yang umum digunakan adalah {\bf H} untuk menempatkan gambar {\bf sesuai} penempatannya di file .tex atau  {\bf h} yang berarti "kira-kira" di sini. \\
-	Jika tidak menggunakan {\it placement specifier}, \LaTeX{} akan menempatkan gambar secara otomatis untuk menghindari bagian kosong pada dokumen anda.
-	Walaupun cara ini sangat mudah, hindarkan terjadinya penempatan dua gambar secara berurutan. 	
-	\begin{itemize}
-		\item Gambar~\ref{fig:ularpng} ditempatkan di bagian atas halaman, walaupun penempatannya dilakukan setelah penulisan 3 paragraf setelah penjelasan ini.
-		\item Gambar~\ref{fig:ularjpg} dengan skala 0.5 ditempatkan di antara dua buah paragraf. Perhatikan penulisannya di dalam file bab2.tex!
-		\item Gambar~\ref{fig:ularpdf} ditempatkan menggunakan {\it specifier} {\bf h}.
-	\end{itemize}
+    \item \texttt{GLenum}: \textit{unsigned long} (digunakan untuk enumerasi).
+    \item \texttt{GLboolean}: \textit{boolean} (nilai logika benar atau salah).
+    \item \texttt{GLbitfield}: \textit{unsigned long} (untuk operasi \textit{bitmask}).
+    \item \texttt{GLbyte}: \textit{byte} (bilangan bulat bertanda 8-bit).
+    \item \texttt{GLshort}: \textit{short} (bilangan bulat bertanda 16-bit).
+    \item \texttt{GLint}: \textit{long} (bilangan bulat bertanda 32-bit).
+    \item \texttt{GLsizei}: \textit{long} (ukuran atau jumlah, non-negatif).
+    \item \texttt{GLintptr}: \textit{long long} (digunakan untuk alamat memori atau \textit{offset}).
+    \item \texttt{GLsizeiptr}: \textit{long long} (ukuran dalam \textit{bytes} untuk operasi \textit{buffer}).
+    \item \texttt{GLubyte}: \textit{octet} (bilangan bulat tak bertanda 8-bit).
+    \item \texttt{GLushort}: \textit{unsigned short} (bilangan bulat tak bertanda 16-bit).
+    \item \texttt{GLuint}: \textit{unsigned long} (bilangan bulat tak bertanda 32-bit).
+    \item \texttt{GLfloat}: \textit{unrestricted float} (bilangan titik mengambang 32-bit).
+    \item \texttt{GLclampf}: \textit{unrestricted float} (nilai \textit{float} yang biasanya dibatasi dalam rentang $[0, 1]$).
 \end{itemize}
- 
-\dtext{17-18}
-\begin{figure} 
-	\centering  
-	\includegraphics[scale=1]{ular-png}  
-	\caption[Gambar {\it Serpentes} dalam format png]{Gambar {\it Serpentes} dalam format png} 
-	\label{fig:ularpng} 
-\end{figure} 
 
-\dtext{19-20}
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.5]{ular-jpg}  
-	\caption[Ular kecil]{Ular kecil} 
-	\label{fig:ularjpg} 
-\end{figure} 
-\dtext{21-22}
+\subsection{WebGLContextAttributes}
+\label{subsec:WebGLContextAttributes}
 
-\begin{figure}[ht] 
-	\centering  
-	\includegraphics[scale=1]{ular-pdf}  
-	\caption[ {\it Serpentes} betina]{ {\it Serpentes} jantan} 
-	\label{fig:ularpdf} 
-\end{figure} 
- 
-\subsection{Kode Program}
+\textit{WebGLContextAttributes} adalah sebuah \textit{dictionary} yang berisi atribut untuk permukaan gambar (\textit{drawing surface}). Objek ini dilewatkan sebagai parameter kedua pada fungsi \texttt{getContext} saat menginisialisasi konteks WebGL. Berikut adalah rincian atribut yang tersedia beserta nilai \textit{default}-nya:
 
-Kode program dalam bahasa tertentu seringkali harus ditulis di dalam bab, bukan hanya dilampirkan di bagian Lampiran. 
-Kode~\ref{kode:aneh} menampilkan penggunaan karakter-karakter yang umum digunakan dalam sebuah program yang ditulis dengan bahasa C.
+\begin{itemize}
+    \item \texttt{alpha} (\textit{default}: \texttt{true}): Menentukan apakah kanvas memiliki \textit{buffer} alfa (transparansi).
+    \item \texttt{depth} (\textit{default}: \texttt{true}): Menentukan apakah \textit{drawing buffer} memiliki \textit{depth buffer} sebesar minimal 16-bit untuk pengujian kedalaman 3D.
+    \item \texttt{stencil} (\textit{default}: \texttt{false}): Menentukan apakah \textit{drawing buffer} memiliki \textit{stencil buffer} sebesar minimal 8-bit.
+    \item \texttt{antialias} (\textit{default}: \texttt{true}): Menentukan apakah peramban akan melakukan \textit{anti-aliasing} (penghalusan tepi objek) jika didukung oleh sistem.
+    \item \texttt{premultipliedAlpha} (\textit{default}: \texttt{true}): Menentukan apakah warna pada \textit{drawing buffer} disimpan dalam format \textit{premultiplied alpha}.
+    \item \texttt{preserveDrawingBuffer} (\textit{default}: \texttt{false}): Jika bernilai \texttt{false}, isi \textit{buffer} akan dihapus secara otomatis setiap kali selesai dilakukan rendering. Jika \texttt{true}, isi \textit{buffer} akan tetap ada sampai dihapus secara manual.
+    \item \texttt{preferLowPowerToHighPerformance} (\textit{default}: \texttt{false}): Memberikan petunjuk kepada sistem untuk lebih memprioritaskan efisiensi daya dibandingkan performa tinggi.
+    \item \texttt{failIfMajorPerformanceCaveat} (\textit{default}: \texttt{false}): Jika bernilai \texttt{true}, pembuatan konteks WebGL akan gagal jika performa sistem dianggap sangat rendah (misalnya rendering melalui CPU).
+\end{itemize}
 
+\subsection{Objek Utama WebGL}
+\label{subsec:objek_utama_webgl}
 
-\begin{lstlisting}[language=Java, caption=Kode untuk menampilkan karakter-karakter aneh, label=kode:aneh]
-// This does not make algorithmic sense, 
-// but it shows off significant programming characters.
+Setelah konteks WebGL berhasil diinisialisasi dengan atribut yang ditentukan, pengelolaan sumber daya grafis dilakukan melalui sekumpulan objek khusus. Seluruh objek di bawah ini merupakan turunan dari \texttt{WebGLObject} yang merepresentasikan sumber daya yang dialokasikan di dalam memori GPU (\textit{Graphics Processing Unit}):
 
-#include<stdio.h>
+\begin{itemize}
+    \item \texttt{WebGLBuffer}: Digunakan untuk menyimpan data biner seperti posisi titik (\textit{vertex}), warna, atau indeks yang akan diproses oleh GPU.
+    \item \texttt{WebGLFramebuffer} dan \texttt{WebGLRenderbuffer}: Objek yang digunakan untuk teknik rendering tingkat lanjut, seperti \textit{off-screen rendering} atau \textit{post-processing}, di mana hasil gambar tidak langsung ditampilkan ke layar.
+    \item \texttt{WebGLProgram}: Wadah gabungan antara \textit{Vertex Shader} dan \textit{Fragment Shader} yang telah melalui proses kompilasi dan siap untuk dieksekusi secara paralel oleh GPU.
+    \item \texttt{WebGLShader}: Representasi dari unit kode \textit{shader} individual yang ditulis menggunakan bahasa GLSL (\textit{OpenGL Shading Language}) sebelum akhirnya digabungkan ke dalam sebuah program.
+    \item \texttt{WebGLTexture}: Objek yang berfungsi untuk menyimpan data citra atau gambar yang akan dipetakan (\textit{mapping}) ke permukaan geometri tiga dimensi.
+\end{itemize}
 
-void myFunction( int input, float* output ) {
-	switch ( array[i] ) {
-		case 1: // This is silly code
-			if ( a >= 0 || b <= 3 && c != x )
-				*output += 0.005 + 20050;
-			char = 'g';
-			b = 2^n + ~right_size - leftSize * MAX_SIZE;
-			c = (--aaa + &daa) / (bbb++ - ccc % 2 );
-			strcpy(a,"hello $@?"); 
-	}
-	count = ~mask | 0x00FF00AA;
-}
+\section {Three.js}
+\subsection{Instalasi dan Konfigurasi Three.js}
+\label{subsec:instalasi_threejs}
 
-// Fonts for Displaying Program Code in LATEX
-// Adrian P. Robson, nepsweb.co.uk
-// 8 October 2012
-// http://nepsweb.co.uk/docs/progfonts.pdf
+Instalasi \textit{Three.js} dalam penelitian ini dilakukan menggunakan metode \textit{Import Maps}. Metode ini merupakan standar modern pada peramban (\textit{browser}) yang memungkinkan pemanggilan modul JavaScript langsung dari \textit{Content Delivery Network} (CDN) tanpa memerlukan proses instalasi lokal yang kompleks menggunakan \textit{build tools} atau \textit{Node Package Manager} (NPM).
 
+\subsubsection{Konfigurasi Import Maps}
+\textit{Import maps} digunakan untuk mendefinisikan alias dari alamat URL pustaka \textit{Three.js}. Dengan konfigurasi ini, kode program dapat memanggil \textit{Three.js} seolah-olah pustaka tersebut berada di dalam direktori lokal. Berikut adalah cuplikan kode konfigurasi pada file HTML:
+
+\begin{lstlisting}[language=HTML, caption={Konfigurasi Import Maps Three.js}]
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@v0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@v0.160.0/examples/jsm/"
+    }
+  }
+</script>
 \end{lstlisting}
 
-\subsection{Notasi}
+\subsubsection{Struktur Pemanggilan Modul}
+Setelah konfigurasi \textit{import maps} ditetapkan, komponen utama dan modul tambahan (\textit{addons}) dapat diimpor ke dalam skrip JavaScript. Penggunaan modul tambahan sangat krusial dalam visualisasi anatomi, terutama untuk memuat model 3D dan mengatur kontrol kamera.
 
-Simbol-simbol (matematika) yang sering digunakan sepanjang penulisan skripsi, dapat dimasukkan ke dalam ``Daftar Notasi''. Daftar ini ada di halaman depan sebelum Bab~\ref{chap:intro}.
-Cara memasukkan sebuah simbol ke dalam Daftar Notasi adalah menggunakan perintah \verb|\nomenclature|. Contoh:
-\begin{center}
-    \verb|\nomenclature[]{$A$}{luas kandang ular}|    
-\end{center}
-\nomenclature[]{$A$}{luas kandang ular}
-\nomenclature[]{$n$}{banyaknya ular}
-\nomenclature[]{$k$}{jumlah kepala per seekor ular\nomrefpage}
-Argumen opsional digunakan untuk mengurutkan notasi. Silahkan lihat sendiri dokumentasi package \verb|nomencl|
 
+\begin{itemize}
+    \item Modul Inti (\textit{Core}): Digunakan untuk membuat \textit{scene}, kamera, dan \textit{renderer}.
+    \item GLTFLoader: Modul tambahan yang digunakan untuk memuat aset model 3D anatomi manusia dalam format \texttt{.gltf} atau \texttt{.glb}.
+    \item OrbitControls: Modul yang memungkinkan pengguna melakukan rotasi dan perbesaran (\textit{zoom}) pada model anatomi secara interaktif.
+\end{itemize}
+
+\begin{lstlisting}[language=HTML, caption={Pemanggilan Modul Three.js}]
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+\end{lstlisting}
+
+\subsection{Dasar Pembentukan Adegan}
+\label{subsec:dasar_scene}
+
+Terdapat tiga komponen utama yang wajib diinisialisasi agar sebuah objek 3D dapat ditampilkan pada peramban web. Ketiga komponen tersebut membentuk sebuah ekosistem yang saling bergantung:
+
+\begin{enumerate}
+    \item \textit{Scene} (Adegan): Berfungsi sebagai wadah utama (\textit{container}) tempat diletakkannya seluruh objek, lampu, dan latar belakang.
+    \item \textit{Camera} (Kamera): Menentukan sudut pandang pengguna terhadap \textit{scene}. Jenis yang paling umum digunakan adalah \textit{PerspectiveCamera} yang meniru cara mata manusia melihat (objek jauh terlihat lebih kecil).
+    \item \textit{Renderer}: Alat yang bertugas mengambil data dari \textit{Scene} melalui sudut pandang \textit{Camera} dan menggambarnya secara teknis ke dalam elemen \texttt{<canvas>} di HTML menggunakan \textit{WebGL}.
+\end{enumerate}
+
+\begin{lstlisting}[language=JavaScript, caption={Perbaikan Inisialisasi Scene, Camera, dan Renderer}]
+function init() {
+    // 1. Membuat Adegan (Scene)
+    const scene = new THREE.Scene();
+
+    // 2. Mengatur Kamera
+    const fov = 75;
+    const aspect = window.innerWidth / window.innerHeight;
+    const near = 0.1;
+    const far = 1000;
+
+    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    camera.position.set(0, 2, 3);
+
+    // 3. Mengatur Renderer dengan pengecekan ketersediaan DOM
+    const renderer = new THREE.WebGLRenderer({ 
+        antialias: true,
+        alpha: true // Opsional: jika ingin latar belakang transparan
+    });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Menambahkan renderer ke dalam elemen HTML secara aman
+    if (document.body) {
+        document.body.appendChild(renderer.domElement);
+    } else {
+        console.error("Elemen body tidak ditemukan. Pastikan script diletakkan di akhir body atau menggunakan event listener.");
+    }
+}\end{lstlisting}
+
+\subsection{\textit{Load} Model 3D}
+\label{subsec:loading_models}
+
+Proses integrasi aset visual ke dalam sistem dilakukan dengan memuat model eksternal menggunakan \textit{loader} spesifik. Berdasarkan standar dokumentasi \textit{Three.js} \footnote{\url{https://threejs.org/manual/#en/loading-3d-models} (diakses pada 1 April 2026)}, format yang paling disarankan untuk keperluan web adalah \textit{GLTF} (\textit{Graphics Language Transmission Format}) karena efisiensinya dalam pengiriman data melalui jaringan.
+
+\subsubsection{Implementasi GLTFLoader}
+Untuk menangani berkas format .gltf atau .glb, digunakan modul \textit{GLTFLoader}. Proses pemuatan dilakukan secara asinkron dengan struktur kode sebagai berikut:
+
+\begin{lstlisting}[language=JavaScript, caption={Implementasi Pemuatan Model GLTF}]
+\textit{/LOAD MODEL}
+const loader = new GLTFLoader();
+loader.load("./tes.glb", 
+    (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
+        console.log("Model berhasil dimuat!");
+    }
+);
+\end{lstlisting}
+
+\subsection{Jenis Pencahayaan}
+\label{subsec:jenis_cahaya}
+
+Pencahayaan dalam \textit{Three.js} diklasifikasikan berdasarkan cara cahaya tersebut dipancarkan dan pengaruhnya terhadap objek di dalam \textit{scene}. Berikut adalah jenis-jenis sumber cahaya yang digunakan untuk meningkatkan kualitas visualisasi:
+
+\begin{enumerate}
+    \item \textbf{\textit{AmbientLight}} \\
+    Cahaya ini menerangi seluruh objek di dalam \textit{scene} secara merata dari segala arah tanpa memiliki titik asal tertentu.
+    \begin{itemize}
+        \item Fungsi: Menghilangkan bayangan yang terlalu gelap (\textit{pitch black}) agar detail organ di area yang tidak terkena cahaya langsung tetap terlihat.
+        \item Karakteristik: Tidak memiliki arah, tidak menghasilkan bayangan (\textit{shadows}), dan hanya menerima dua parameter (\textit{color} dan \textit{intensity}).
+    \end{itemize}
+
+    \item \textbf{\textit{DirectionalLight}} \\
+    Cahaya yang memancar dari satu arah tertentu secara paralel, menyerupai karakteristik sinar matahari.
+    \begin{itemize}
+        \item Fungsi: Memberikan dimensi visual dan mempertegas bentuk anatomis objek melalui kontras cahaya.
+        \item Karakteristik: Memiliki sinar yang sejajar dan sangat efektif untuk memberikan efek kedalaman (\textit{depth}) pada model dari sudut tertentu.
+    \end{itemize}
+    
+
+    \item \textbf{\textit{HemisphereLight}} \\
+    Sumber cahaya yang diletakkan tepat di atas \textit{scene}, dengan gradasi warna yang berbeda antara bagian atas dan bawah.
+    \begin{itemize}
+        \item Fungsi: Memberikan efek pencahayaan lingkungan yang lebih natural dan halus dibandingkan \textit{AmbientLight}.
+        \item Karakteristik: Menerima tiga parameter (\textit{skyColor}, \textit{groundColor}, dan \textit{intensity}). Sangat berguna untuk simulasi \textit{ambient} yang lebih kompleks tanpa membebani performa.
+    \end{itemize}
+    
+
+    \item \textbf{\textit{PointLight}} \\
+    Cahaya yang memancar dari satu titik pusat ke segala arah, serupa dengan cara kerja bola lampu pijar.
+    \begin{itemize}
+        \item Fungsi: Memberikan efek fokus atau penekanan pada area organ spesifik.
+        \item Karakteristik: Memiliki parameter \textit{decay} dan \textit{distance}, di mana intensitas cahaya akan meredup seiring dengan bertambahnya jarak dari sumber cahaya.
+    \end{itemize}
+    
+
+    \item \textbf{\textit{SpotLight}} \\
+    Cahaya yang memancar dari satu titik ke arah tertentu dalam bentuk kerucut (\textit{cone}).
+    \begin{itemize}
+        \item Fungsi: Digunakan untuk pencahayaan yang sangat spesifik, terfokus, dan dramatis pada bagian anatomi tertentu.
+        \item Karakteristik: Memiliki parameter \textit{angle} (lebar sorotan) dan \textit{penumbra} (kehalusan tepi cahaya). Cahaya ini dapat dikonfigurasi untuk menghasilkan bayangan yang tajam.
+    \end{itemize}
+    
+\end{enumerate}
+
+
+
+\section{Anatomi Manusia }
+\label{sec:anatomi_manusia}
+
+Anatomi berasal dari kata Yunani \textit{anatome} yang berarti memotong dan \textit{anatemnein} yang berarti membuka. Anatomi manusia mencakup struktur yang dapat diamati dengan mata telanjang (\textit{gross anatomy}) maupun melalui bantuan mikroskop (\textit{microscopic anatomy}). Struktur ini terbagi ke dalam berbagai sistem organ kompleks seperti sistem rangka, kulit (integumen), fasia, kardiovaskuler, limfatik, dan sistem saraf. ~\cite{richard:12:grays}
+
+\subsection{Sistem Rangka}
+\label{subsec:sistem_rangka}
+
+Sistem rangka merupakan kerangka keras yang menyokong tubuh. Sistem ini terdiri dari tulang rawan dan tulang keras.
+\begin{itemize} 
+    \item {Tulang Rawan (\textit{Cartilago})}
+\label{subsec:tulang_rawan}
+
+    Tulang rawan merupakan jaringan ikat \textit{avaskuler} yang terdiri dari serabut ekstraseluler di dalam matriks dengan sel-sel yang terlokalisasi dalam rongga kecil. Karakteristik fisik tulang rawan sangat bergantung pada jenis dan jumlah serabut kolagen di dalam matriksnya, yang menyesuaikan dengan beban mekanis pada area tubuh tersebut.
+    
+    Secara umum, tulang rawan memiliki tiga fungsi utama:
+    \begin{itemize}
+        \item Menyokong dan menjaga fleksibilitas jaringan lunak.
+        \item Menyediakan permukaan sendi yang halus untuk meminimalkan gesekan antar tulang saat bergerak.
+        \item Menjadi media perantara dalam proses pertumbuhan dan perkembangan tulang panjang (\textit{ossification}).
+    \end{itemize}
+    
+    Berdasarkan komposisi matriksnya, tulang rawan diklasifikasikan menjadi tiga jenis:
+    \begin{enumerate}
+        \item \textbf{Tulang Rawan Hialin}: Jenis paling umum dengan kandungan serabut kolagen sedang. Contoh: permukaan persendian tulang.
+        \item \textbf{Tulang Rawan Elastis}: Mengandung serabut kolagen dan sejumlah besar serabut elastis. Contoh: telinga luar (\textit{auris externa}).
+        \item \textbf{Tulang Rawan Fibrosa}: Mengandung kepadatan serabut kolagen yang tinggi. Contoh: diskus intervertebralis.
+    \end{enumerate}
+    
+    \item {Tulang}
+    \label{subsec:tulang}
+    
+    Tulang merupakan jaringan ikat hidup yang mengalami kalsifikasi. Tulang berperan dalam menyokong struktur tubuh, melindungi organ vital, menyimpan mineral, serta menjadi tempat produksi sel darah.
+
+    
+   Secara struktural, tulang terbagi menjadi dua jenis utama, yaitu tulang kompak (\textit{substantia compacta}) yang merupakan lapisan luar yang padat dan keras sebagai pelindung, serta tulang spons (\textit{substantia spongiosa}) yang terdiri dari berkas tulang (\textit{spiculae}) yang membentuk rongga berisi sumsum tulang.
+
+    
+    Berdasarkan morfologinya, tulang diklasifikasikan menjadi:
+    \begin{enumerate}
+        \item \textbf{Tulang Panjang}: Berbentuk tabung, contohnya \textit{humerus} dan \textit{femur}.
+        \item \textbf{Tulang Pendek}: Berbentuk kubus, contohnya \textit{carpi}.
+        \item \textbf{Tulang Pipih}: Dua lempeng kompak dipisahkan tulang spons, contohnya \textit{cranium}.
+        \item \textbf{Tulang Tidak Beraturan}: Bentuk bervariasi, contohnya tulang wajah (\textit{facialis}).
+        \item \textbf{Tulang Sesamoidea}: Tulang bulat/oval yang berkembang di dalam tendon.
+    \end{enumerate}
+ \end{itemize}
+
+ 
+\subsection{Persendian (\textit{Articulatio})}
+\label{subsec:persendian}
+
+Persendian atau artikulasi adalah titik pertemuan antara dua elemen tulang kerangka. Persendian diklasifikasikan menjadi:
+
+\subsubsection{Sendi Sinovial}
+Elemen tulang dipisahkan oleh rongga sendi (\textit{cavitas articularis}). Memiliki ciri khas berupa tulang rawan sendi, kapsul sendi (membrana sinovialis dan fibrosum), serta struktur tambahan seperti \textit{discus articularis}.
+
+Berdasarkan bentuk permukaan dan sumbu geraknya (\textit{axial}), sendi ini dibedakan menjadi:
+\begin{itemize}
+    \item \textbf{Sendi Peluru (\textit{Spheroidea})}: Multiaxial (contoh: sendi panggul).
+    \item \textbf{Sendi Engsel (\textit{Ginglymus})}: Uniaxial (contoh: sendi siku).
+    \item \textbf{Sendi Putar (\textit{Trochoidea})}: Uniaxial (contoh: sendi leher).
+    \item \textbf{Sendi Pelana (\textit{Sellaris})}: Biaxial (contoh: pangkal ibu jari).
+    \item \textbf{Sendi Elipsoid (\textit{Condylaris})}: Biaxial (contoh: pergelangan tangan).
+    \item \textbf{Sendi Geser (\textit{Plana})}: Gerak meluncur antar permukaan tulang.
+\end{itemize}
+
+\subsubsection{Sendi Solid (\textit{Compacta})}
+Tidak memiliki rongga, dihubungkan langsung oleh jaringan ikat atau tulang rawan.
+\begin{enumerate}
+    \item \textbf{Sendi Fibrosa}: Meliputi sutura (tengkorak), gomfosis (gigi), dan sindesmosis (antar tulang panjang).
+    \item \textbf{Sendi Kartilaginosa}: Meliputi sinkondrosis (lempeng pertumbuhan) dan simfisis (simfisis pubis).
+\end{enumerate}
+
+\subsection{Kulit dan Fasia}
+\label{subsec:kulit_fasia}
+
+\subsubsection{Kulit (\textit{Integumentum Commune})}
+Organ terbesar yang berfungsi sebagai pelindung, sawar permeabel, dan termoregulator. Terdiri dari \textbf{Epidermis} (lapisan luar avaskuler) dan \textbf{Dermis} (jaringan ikat padat vaskuler).
+
+
+\subsubsection{Fasia (\textit{Fascia})}
+Jaringan ikat yang memisahkan, menyokong, dan menghubungkan organ.
+\begin{itemize}
+    \item \textbf{Fasia Superfisial}: Jaringan ikat longgar di bawah dermis, sering mengandung lemak.
+    \item \textbf{Fasia Profunda}: Jaringan ikat padat yang membentuk \textit{septum intermusculare} dan \textit{retinacula}.
+\end{itemize}
+
+\subsection{Sistem Otot (\textit{Systema Musculorum})}
+\label{subsec:sistem_otot}
+
+Terdiri dari tiga jenis jaringan otot berdasarkan kendali saraf dan struktur:
+\begin{enumerate}
+    \item \textbf{Otot Rangka (\textit{Musculus Skeletalis})}: Lurik, volunter, berfungsi menggerakkan rangka. Penamaan didasarkan pada bentuk, fungsi, posisi, atau arah serabut.
+    \item \textbf{Otot Jantung (\textit{Musculus Cardiacus})}: Lurik, involunter, hanya ditemukan pada \textit{myocardium}.
+    \item \textbf{Otot Polos (\textit{Musculus Nonstriatus})}: Tidak bergaris, involunter, ditemukan pada dinding pembuluh darah dan organ dalam.
+\end{enumerate}
+
+\subsection{Sistem Kardiovaskuler (\textit{Systema Cardiovasculare})}
+\label{subsec:sistem_kardiovaskuler}
+
+Sistem transportasi tertutup yang terdiri dari jantung (\textit{cor}) dan pembuluh darah.
+\subsubsection{Jenis dan Struktur Pembuluh Darah}
+\begin{itemize}
+    \item \textbf{Arteri}: Mengangkut darah keluar dari jantung.
+    \item \textbf{Vena}: Mengangkut darah kembali ke jantung. Memiliki lumen lebar dan sering memiliki katup (\textit{valva}).
+    \item \textbf{Kapiler}: Tempat pertukaran zat antar jaringan.
+\end{itemize}
+
+Dinding pembuluh darah terdiri dari tiga lapisan: \textit{tunica intima}, \textit{tunica media} (otot polos), dan \textit{tunica externa}.
+
+\subsubsection{Klasifikasi Arteri dan Vena}
+Arteri dibagi menjadi Arteri Besar (Elastis), Sedang (Muskular), dan Arteri Kecil/Arteriol. Vena dibagi menjadi Vena Besar, Sedang/Kecil, dan Venula.
+
+\subsection{Sistem Limfatik (\textit{Systema Lymphaticum})}
+\label{subsec:sistem_limfatik}
+
+Sistem limfatik merupakan jaringan kompleks yang terdiri dari pembuluh limfa, kelenjar limfa, dan organ limfoid. Sistem ini berfungsi untuk mengumpulkan cairan interstitial yang keluar dari jaringan vaskuler, menyaring bahan patogenik, serta mengangkut lemak hasil absorpsi dari saluran pencernaan kembali ke sistem vena.
+
+\subsubsection{Pembuluh Limfa (\textit{Vasa Lymphatica})}
+\textit{Vasa lymphatica} membentuk saluran yang berawal dari kapiler limfa buntu di dalam jaringan tubuh. Pembuluh ini mengumpulkan cairan jernih yang disebut limfa (\textit{lymphaticus}). Karakteristik utama pembuluh limfa meliputi:
+\begin{itemize}
+    \item \textbf{Distribusi}: Tersebar di sebagian besar tubuh, kecuali otak (\textit{encephalon}), sumsum tulang, serta jaringan \textit{avaskuler} seperti tulang rawan.
+    \item \textbf{Mekanisme Aliran}: Aliran limfa bersifat satu arah berkat adanya katup. Pergerakan cairan dipicu secara tidak langsung oleh kontraksi otot rangka dan pulsasi arteri di sekitarnya.
+    \item \textbf{Transportasi Lemak}: Pada usus halus, lemak yang diserap dalam bentuk kilomikron memasuki kapiler limfa khusus yang disebut \textit{lacteals}, menghasilkan cairan putih seperti susu yang disebut \textit{chyle}.
+\end{itemize}
+
+
+
+\subsubsection{Kelenjar Limfa (\textit{Nodi Lymphatici})}
+\textit{Nodi lymphatici} adalah struktur berkapsul berukuran kecil (0,1--2,5 cm) yang berfungsi sebagai filter biologis. Kelenjar ini mengandung limfosit dan makrofag yang bertugas:
+\begin{itemize}
+    \item Menjebak dan memfagositosis materi partikel atau debris sel.
+    \item Mendeteksi serta melawan antigen asing melalui respons imun.
+\end{itemize}
+
+Kelenjar limfa sering berkelompok di daerah yang berisiko tinggi terhadap masuknya patogen, seperti regio aksilaris (ketiak), inguinalis (selangkangan), dan servikalis (leher). Secara klinis, perubahan fisik pada kelenjar ini (seperti menjadi keras atau membesar) dapat menjadi indikator adanya infeksi sistemik atau metastasis sel tumor.
+
+\subsubsection{Trunkus dan Duktus Limfatikus}
+Seluruh pembuluh limfa akan bergabung membentuk saluran yang lebih besar (\textit{trunci} atau \textit{ductus}) sebelum bermuara kembali ke sistem vena di pangkal leher, tepatnya pada titik pertemuan antara \textit{vena jugularis interna} dan \textit{vena subclavia}.
+
+\begin{enumerate}
+    \item \textbf{Analisis Kebutuhan Sistem}: Bagian ini mengidentifikasi kebutuhan fungsional dan non-fungsional dari perangkat lunak. Analisis ini mencakup fitur-fitur utama seperti interaksi pengguna dengan model 3D, pemilihan organ, serta kemampuan sistem dalam menyajikan informasi anatomi secara akurat.
+    
+    \item \textbf{Analisis Aset dan Lisensi Model 3D}: Dilakukan analisis mendalam terhadap pemilihan aset model 3D yang mencakup kelengkapan sistem organ utama (rangka, otot, kardiovaskuler, dan organ dalam) serta spesifikasi teknisnya. Selain aspek teknis, dilakukan peninjauan aspek legalitas melalui \textit{license model} untuk memastikan penggunaan aset sesuai dengan ketentuan hukum dan etika akademik.
+\end{enumerate}
+
+\section{Analisis Lisensi Aset (\textit{License Model})}
+\label{subsec:analisis_lisensi}
+
+Peninjauan terhadap aspek legalitas aset dilakukan dengan membandingkan ketentuan dari penyedia standar lisensi yang digunakan dalam perolehan model 3D, yaitu \textit{Fab Standard License} oleh Epic Games serta dua varian lisensi dari \textit{Creative Commons} (CC). Pemahaman terhadap perbedaan \textit{Terms and Conditions} (T\&C) ini sangat penting untuk menentukan batasan penggunaan, modifikasi, dan distribusi aset di dalam perangkat lunak.
+
+Sebagai gambaran awal, ringkasan perbandingan ketiga lisensi tersebut disajikan pada Tabel \ref{tab:perbandingan_lisensi}.
+
+\begin{table}[H]
+\centering
+\caption{Perbandingan Ketentuan Lisensi Aset Model 3D}
+\label{tab:perbandingan_lisensi}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Fitur / Ketentuan} & \textbf{Fab Standard License} & \textbf{CC BY 4.0} & \textbf{CC BY-SA 4.0} \\ \hline
+Penggunaan Komersial & Ya & Ya & Ya \\ \hline
+Modifikasi / Adaptasi & Ya & Ya & Ya \\ \hline
+Kewajiban Atribusi (Kredit) & Tidak Wajib & \textbf{Wajib} & \textbf{Wajib} \\ \hline
+Distribusi Ulang Aset Mentah & \textbf{Dilarang} & Ya & Ya (Lisensi Sama) \\ \hline
+Ketentuan \textit{ShareAlike} & Tidak & Tidak & \textbf{Ya} \\ \hline
+Jaminan / \textit{Warranty} & Tidak Ada & Tidak Ada & Tidak Ada \\ \hline
+Penerbit Lisensi & Epic Games & Creative Commons & Creative Commons \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+Untuk memberikan pemahaman yang lebih mendalam mengenai batasan teknis dan hukum yang tertera pada tabel di atas, berikut adalah penjelasan dari setiap fitur atau ketentuan yang dianalisis:
+
+\begin{itemize}
+    \item \textbf{Penggunaan Komersial}: Menentukan apakah aset boleh digunakan dalam proyek yang menghasilkan keuntungan finansial. 
+    
+    \item \textbf{Modifikasi / Adaptasi}: Memberikan hak kepada pengembang untuk mengubah geometri model 3D, memperbaiki tekstur, atau melakukan \textit{optimasi polygon count} agar aset berjalan lancar pada \textit{web browser} menggunakan Three.js.
+    
+    \item \textbf{Kewajiban Atribusi (Kredit)}: Syarat mencantumkan nama pencipta asli. 
+    
+    \item \textbf{Distribusi Ulang Aset Mentah (\textit{Standalone})}: Melarang pengembang membagikan file sumber model 3D secara terpisah dari aplikasi. Pengguna hanya boleh berinteraksi dengan aset melalui antarmuka perangkat lunak.
+    
+    \item \textbf{Ketentuan \textit{ShareAlike}}: Jika pengembang melakukan modifikasi signifikan, maka model baru tersebut harus dilepaskan kembali ke publik dengan lisensi yang identik (hanya berlaku pada CC BY-SA).
+    
+    \item \textbf{Jaminan / \textit{Warranty}}: Klausul "Tidak Ada Jaminan" berarti penyedia tidak bertanggung jawab atas kesalahan teknis atau anatomi. Hal ini mewajibkan pengembang melakukan validasi medis secara mandiri.
+
+    \item \textbf{Penerbit Lisensi}: Merupakan organisasi yang menyusun dan merilis ketentuan hukum tersebut. Pemahaman terhadap penerbit lisensi penting untuk mengetahui ekosistem hukum yang menaungi aset tersebut (misalnya ekosistem \textit{open-source} oleh \textit{Creative Commons} atau ekosistem komersial oleh \textit{Epic Games}).
+
+\end{itemize}
+
+Berdasarkan klasifikasi ketentuan tersebut, berikut adalah rincian analisis spesifik untuk masing-masing lisensi yang diterapkan pada aset dalam sistem:
+
+\begin{enumerate}
+    \item \textbf{Lisensi Standar Fab}: Memberikan fleksibilitas tinggi karena tidak mewajibkan pemberian kredit. Pengembang diizinkan menggabungkan aset ke dalam proyek tanpa batasan \textit{engine}, namun dilarang keras menjual kembali aset secara terpisah di luar proyek yang dibangun.
+
+    \item \textbf{CC Attribution 4.0 International (CC BY 4.0)}: Memberikan kebebasan penuh untuk berbagi dan mengadaptasi materi. Ketentuan utamanya adalah kewajiban atribusi, di mana pengembang wajib memberikan kredit yang sesuai dan menunjukkan jika terdapat perubahan pada aset asli.
+
+    \item \textbf{CC Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)}: Serupa dengan CC BY 4.0, namun dengan tambahan klausul \textit{ShareAlike}. Setiap hasil modifikasi harus didistribusikan di bawah lisensi yang sama, guna menjaga ekosistem aset tetap bersifat terbuka.
+\end{enumerate}
