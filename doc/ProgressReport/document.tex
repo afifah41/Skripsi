@@ -12,11 +12,20 @@
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
+\usepackage{listings}
+\usepackage{indentfirst}
+\lstset{
+    breaklines=true,                 % Otomatis ganti baris jika kode terlalu panjang
+    basicstyle=\ttfamily\small,      % Menggunakan font monospace (khusus kode) yang rapi
+    numbers=left,                    % Menampilkan nomor baris di sebelah kiri
+    frame=single,                    % Memberikan kotak di sekeliling blok kode
+    showstringspaces=false           % Menghilangkan simbol spasi yang aneh di dalam string
+}
 
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Genap 2015/2016}}}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Tugas Akhir\textemdash Sem. Genap 2015/2016}}}
 
 \onehalfspacing
  
@@ -26,21 +35,21 @@
 \author{\nama \textendash \@npm} 
 
 %ISILAH DATA BERIKUT INI:
-\newcommand{\nama}{Lionov}
-\newcommand{\@npm}{1997730020}
-\newcommand{\tanggal}{01/01/1900} %Tanggal pembuatan dokumen
-\newcommand{\@judultopik}{Simulasi Kerumunan di Museum} % Judul/topik anda
-\newcommand{\kodetopik}{TAB0901}
-\newcommand{\jumpemb}{2} % Jumlah pembimbing, 1 atau 2
-\newcommand{\pembA}{Thomas Anung Basuki}
+\newcommand{\nama}{Afifah Nurfauziyyah}
+\newcommand{\@npm}{6182001062}
+\newcommand{\tanggal}{25/05/2026} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{Visualisasi 3 Dimensi Anatomi Manusia} % Judul/topik anda
+\newcommand{\kodetopik}{PAN6004CCS}
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\pembA}{Pascal Alfadian Nugroho, S.Kom., M.Comp.}
 \newcommand{\pembB}{-}
-\newcommand{\semesterPertama}{40 - Genap 15/16} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
-\newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
-\newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
+\newcommand{\semesterPertama}{60 - Genap 25/26} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan tugas akhir s.d. dokumen ini dibuat
+\newcommand{\kulPertama}{Tugas Akhir 1} % Kuliah dimana topik ini diambil pertama kali
 \newcommand{\tipePR}{B} % tipe progress report :
-% A : dokumen pendukung untuk pengambilan ke-2 di Skripsi 1
-% B : dokumen untuk reviewer pada presentasi dan review Skripsi 1
-% C : dokumen pendukung untuk pengambilan ke-2 di Skripsi 2
+% A : dokumen pendukung untuk pengambilan ke-2 di Tugas Akhir 1
+% B : dokumen untuk reviewer pada presentasi dan review Tugas Akhir 1
+% C : dokumen pendukung untuk pengambilan ke-2 di Tugas Akhir 2
 
 % Dokumen hasil template ini harus dicetak bolak-balik !!!!
 
@@ -48,7 +57,7 @@
 
 \pagenumbering{arabic}
 
-\section{Data Skripsi} %TIDAK PERLU MENGUBAH BAGIAN INI !!!
+\section{Data Tugas Akhir} %TIDAK PERLU MENGUBAH BAGIAN INI !!!
 Pembimbing utama/tunggal: {\bf \pembA}\\
 Pembimbing pendamping: {\bf \pembB}\\
 Kode Topik : {\bf \kodetopik}\\
@@ -57,68 +66,286 @@ Pengambilan pertama kali topik ini pada : Semester {\bf \semesterPertama} \\
 Pengambilan pertama kali topik ini di kuliah : {\bf \kulPertama} \\
 Tipe Laporan : {\bf \tipePR} -
 \ifdefstring{\tipePR}{A}{
-			Dokumen pendukung untuk {\BF pengambilan ke-2 di Skripsi 1} }
+			Dokumen pendukung untuk {\BF pengambilan ke-2 di Tugas Akhir 1} }
 		{
 		\ifdefstring{\tipePR}{B} {
-				Dokumen untuk reviewer pada presentasi dan {\bf review Skripsi 1}}
-			{	Dokumen pendukung untuk {\bf pengambilan ke-2 di Skripsi 2}}
+				Dokumen untuk reviewer pada presentasi dan {\bf review Tugas Akhir 1}}
+			{	Dokumen pendukung untuk {\bf pengambilan ke-2 di Tugas Akhir 2}}
 		}
 		
 \section{Latar Belakang}
+        Anatomi berasal dari bahasa Yunani \textit{ana} dan \textit{tome} yang berarti memotong atau memisahkan. Secara tradisional ilmu ini menggunakan jenazah (orang mati) sebagai model atau bahan studi untuk memahami bagaimana tubuh manusia bekerja, tetapi dedikasi utamanya tetaplah untuk kehidupan orang hidup. Oleh karena itu, ilmu anatomi menjadi fondasi krusial dalam pendidikan dokter, dokter gigi, dan profesional kesehatan lainnya.
+        
+        Selain menggunakan jenazah sebagai media utama, proses pembelajaran anatomi modern juga sangat bergantung pada penggunaan visualisasi gambar. Visualisasi ini berfungsi sebagai instrumen pendukung untuk mengungkapkan gagasan, data, atau struktur melalui gambar, tulisan, peta, hingga grafik. Dalam dunia medis, kehadiran visualisasi menjadi sangat krusial karena mampu menyederhanakan kompleksitas informasi dari sistem organ tubuh manusia yang rumit, sehingga pengetahuan anatomi tersebut menjadi jauh lebih mudah dipahami dan dikuasai.
 
+        Anatomi manusia dapat dipelajari melalui pendekatan regional, yaitu dengan membagi tubuh menjadi beberapa wilayah dan fokus pada bagian tersebut. Sebagai contoh, pada regional thorax (dada), pembelajaran akan mencakup seluruh komponen di dalamnya, mulai dari tulang, organ, pembuluh darah, jaringan saraf, hingga struktur lainnya pada regional tersebut. Selain pendekatan regional, terdapat pula pendekatan sistemik. Melalui pendekatan ini, suatu sistem dipelajari secara menyeluruh, seperti sistem saraf, sistem peredaran darah, sistem kerangka, sistem otot, dan sebagainya.
+        
+        % Selain menggunakan mayat sebagai bahan dari pembelajaran anatomi, penggunaan visualisasi gambar juga diperlukan sebagai pendukung dalam pembelajaran. Visualisasi pada dasarnya merupakan sebuah proses pengungkapan suatu gagasan, data, atau perasaan dengan menggunakan bentuk gambar, tulisan (kata dan angka), peta, hingga grafik yang bertujuan untuk menyederhanakan kompleksitas informasi. Dalam dunia medis, visualisasi menjadi instrumen krusial untuk memahami anatomi, yaitu disiplin ilmu yang secara harfiah mempelajari struktur tubuh manusia. Struktur tubuh manusia atau yang biasa disebut anatomi ini berasal dari kata Yunani \textit{anatome} yang berarti memotong dan \textit{anatemnein} yang berarti membuka ~\cite{richard:12:grays}. Anatomi manusia sendiri mencakup struktur yang dapat diamati dengan mata telanjang (\textit{gross anatomy}) maupun melalui bantuan mikroskop (\textit{microscopic anatomy}) yang terbagi ke dalam berbagai sistem organ kompleks seperti sistem rangka, kulit (integumen) dan fasia (selaput jaringan ikat tipis yang membungkus otot dan memisahkan kelompok satu dengan yang lain), kardiovaskular, limfatik, dan sistem saraf.
+    
+         Selama ini, visualisasi anatomi lebih sering disajikan dalam bentuk dua dimensi (2D) melalui buku teks medis dan didukung oleh alat peraga berupa manekin anatomi manusia untuk mendukung pemahaman dikarenakan pembelajaran anatomi tidak mungkin selalu menggunakan jenazah sebagai model. Penggunaan manekin ini kurang efisien karena ukurannya yang cukup besar. Maka seiring dengan kemajuan teknologi, metode pembelajaran anatomi kini berkembang dengana adanya pembelajaran anatomi secara 3D. Perkembangan ini sejalan dengan inovasi di bidang pemeriksaan medis yang awalnya hanya mengandalkan \textit{X-Ray}, kini telah berkembang menjadi \textit{Computed Tomography Scan} \textit{(CT Scan)}, \textit{Magnetic Resonance Imaging} \textit{(MRI)} dan jenis pemeriksaan lain yang memungkinkan pengamatan struktur anatomi manusia secara lebih jelas dan detail.
+         
+         %seiring munculnya MRI dan CT Scan yang mampu memberikan gambaran lapisan tubuh yang lebih mendalam. Evolusi ini kemudian mendorong sistem pembelajaran anatomi untuk bertransformasi ke dalam objek 3D digital. Berbeda dengan representasi statis dan datar, grafik 3D dibangun berdasarkan parameter matematis seperti panjang, lebar, dan kedalaman dalam ruang koordinat Kartesius ($x, y, z$). Hal ini memungkinkan pengguna untuk mengeksplorasi objek dari perspektif penuh hingga 360 derajat, lengkap dengan reaksi realistis terhadap simulasi cahaya dan bayangan yang mempertegas tekstur serta volume organ.
+
+         Pembelajaran anatomi secara 3D sudah tersedia dalam berbagai platform aplikasi dengan fitur visualisasi serupa. Namun, sebagian besar aplikasi ini mengharuskan pengguna membayar biaya langganan bulanan \textit{(subscribe)} untuk dapat mengakses dan menikmati seluruh fiturnya secara menyeluruh.\footnote{Catfish Animation Studio, \textit{Anatomy 3D Atlas}, diakses dari \url{https://play.google.com/store/apps/details?id=com.catfishanimationstudio.MuscularSystemLite} pada 10 Maret 2026.}\footnote{Dr. Blanco, \textit{Anatomy Learning}, diakses dari \url {ttps://play.google.com/store/apps/details?id=com.AnatomyLearning.Anatomy3DViewer3&hl=en} pada 10 Maret 2026}. Biaya langganan yang bisa mencapai Rp 200.000 dan eksklusivitas platform ini dapat menjadi kendala bagi mahasiswa maupun masyarakat umum yang membutuhkan referensi anatomi 3D. 
+
+
+        Pembangunan perangkat lunak ini akan memberikan dukungan kepada pengguna untuk bisa mendapat pembelajaran anatomi 3D tanpa penggunaan biaya besar. Perngkat lunak ini akan dibangun dengan dengan basis web dan  menggunakan WebGL sebagai \textit{Application Programming Interface} (API) dan penggunaan \textit{library} Three.js sebagai pendukung. 
+        
+        WebGL dipilih karena berperan sebagai \textit{API} JavaScript yang memungkinkan browser melakukan\textit{rendering} grafis 2D dan 3D tanpa memerlukan \textit{plug-in} tambahan dengan memanfaatkan \textit{graphics processing unit} (GPU). Sehingga dapat memangkas waktu \textit{rendering}. Digunakan Three.js sebagai \textit{library open-source} berbasis WebGL yang menyederhanakan pembuatan konten 3D. Melalui fitur siap pakai seperti geometri, kamera, pencahayaan, dan \textit{texture mapping}, Three.js memungkinkan pengembang menciptakan elemen interaktif secara efisien tanpa harus menangani kerumitan manajemen GPU secara langsung.
+
+        
+        %Untuk mengatasi hambatan tersebut, sebuah web interaktif dikembangkan dengan memanfaatkan teknologi WebGL dan \textit{library} Three.js guna memberikan pengalaman eksplorasi yang mendalam, responsif, dan mudah diakses langsung melalui \textit{browser}. Pendekatan berbasis web ini bertujuan untuk meruntuhkan batasan akses yang ada pada aplikasi konvensional, sehingga visualisasi anatomi berkualitas  dapat dinikmati tanpa perlu melakukan instalasi perangkat lunak tambahan maupun mengeluarkan biaya langganan.
+         
+         %Secara teknis, WebGL (\textit{Web Graphics Library}) berperan sebagai \textit{API} JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa memerlukan \textit{plug-in} tambahan dengan memanfaatkan unit pemrosesan grafis (GPU). Namun, penulisan kode WebGL murni menggunakan GLSL (\textit{OpenGL Shading Language})  kompleks. Oleh karena itu, digunakan Three.js sebagai \textit{library open-source} berbasis WebGL yang menyederhanakan pembuatan konten 3D. Melalui fitur siap pakai seperti geometri, kamera, pencahayaan, dan \textit{texture mapping}, Three.js memungkinkan pengembang menciptakan elemen interaktif secara efisien tanpa harus menangani kerumitan manajemen GPU secara langsung.
 \section{Rumusan Masalah}
+   \begin{enumerate}
+        \item Bagaimana mengimplementasikan visualisasi anatomi manusia 3D berbasis web menggunakan teknologi WebGL dan \textit{library} Three.js agar sistem dapat berjalan secara responsif?
+        \item Bagaimana mekanisme perancangan fitur yang efek terisolasi yang efektif saat pengguna melakukan interaksi (klik/\textit{zoom in}) pada organ spesifik dalam model anatomi?
+    \end{enumerate}
 
+    
 \section{Tujuan}
+    \begin{enumerate}
+        \item Merancang dan mengimplementasikan sistem visualisasi anatomi manusia 3D yang berbasis web dengan memanfaatkan teknologi WebGL dan \textit{library} Three.js agar dapat diakses secara responsif
+        \item Merancang dan membangun fitur \textit{Isolate Mode} yang efektif saat pengguna melakukan interaksi (klik/zoom in) pada organ spesifik dalam model anatomi tersebut 
+    \end{enumerate}
+
+\section{Detail Perkembangan Pengerjaan Tugas Akhir}
+Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan terkahir : 
+    	\begin{enumerate}
+		      \item {\bf Melakukan studi litelatur mengenai anatomi manusia, meliputi organ, fungsi dan kelainannya.} \\
+            {\bf Status :} Ada sejak rencana kerja skripsi.\\
+    		{\bf Hasil  :} Studi litelatur ini dilakukan dengan menggunakan buku Gray's Basic Anatomy yang ditulis oleh Richard L. Drake, A. Wayne Vogl dan Adam W. M. Mitchell. Selain itu juga digunakan buku Sobotta Atlas of Anatomy 15 Ed sebagai penunjang tambahan.
+            
+            Struktur anatomi manusia dipelajari dengan membagianya menjadi beberapa regional, seperti \textit{dorsales}/punggung, \textit{pectorales}/dada, \textit{abdominales}/perut, \textit{perinealis/pelvis} dan \textit{perineum}, \textit{membriinferioris/ extremitas inferior}, \textit{membri superioris/extremitas superior}, dan \textit{Capitis} dan \textit{Cervicales}/Kepala dan Leher. Regional ini kemudian kembali dipecah menjadi bagian kecil seperti kerangka tulang, sendi, otot dan sebagainya. 
+            \begin{enumerate}
+                \item \textit{Dorsales}/Punggung\\
+                Punggung bertindak sebagai penyangga pada tubuh manusia. Pada bagian ini terdapat tulang belakang yang menjadi kerangka keras dan otot-otot yang memungkinkan manusia untuk bisa berdiri tegak, membungkuk, berputar sekaligus mehan beban tubuh selama beraktivitas sehari-hati. Selain penyangga, punggung juga menjadi bagian vital dalam komunikasi tubuh. Bagian medulla spinalis atau lebih dikenal sebagai sumsum tulang belakang bertugas untuk menerima dan mengirim sinyal yang juga dibantu oleh saraf-saraf yang ada di tulang belakang. 
+                \begin{itemize}
+                    \item Kerangka Tulang\\
+                    Bagian tulang belakang (\textit{vertebrae}) terbagi menjadi lima kelompok yang dibagi berdasarkan morfologi dan lokasinya. Pada bagian paling atas, terdapat 7 ruas di bagain leher (\textit{veterbrae cervicales}) dengan karakter ukuran yang kecil sesuai dengan beban yang di topangnya. Pada bagian dada terdapat 12 rusuk yang menjadi tempat tulang rusuk(\textit{costae}) menempel dengan adanya sendi gerak sehingga dada bisa mengembang dan mengempis saat bernapas. Dibagian pinggang terdapat 5 ruas, bagian ini merupakan kerangka penyangga utama tubuh manusia sehinwgga karakteristiknya adalah ukuran besar, tebal, dan padat. Pada bagian panggul terdapat 5 ruas yang menyatu menjadi tulang tunggal bernama \textit{sacrum}.Terakhir adalah tulang ekor, biasanya berisi 4 ruas yang menyatu. 
+
+                    Tulang belakang (\textit{vertebrae}) manusia terbagi menjadi lima kelompok yang diklasifikasikan berdasarkan perbedaan morfologi dan lokasinya. Pada bagian paling atas, terdapat tujuh ruas tulang leher (\textit{vertebrae cervicales}) yang memiliki karakteristik ukuran cenderung kecil, menyesuaikan dengan beban ringan yang ditopangnya. Di bawahnya, terdapat area dada (\textit{vertebrae thoracales}) yang terdiri dari 12 ruas. Bagian dada ini menjadi tempat melekatnya tulang rusuk (\textit{costae}) melalui sendi gerak, yang memungkinkan rongga dada mengembang dan mengempis secara fleksibel saat manusia bernapas.
+
+                    Berlanjut ke bagian bawah, terdapat lima ruas tulang pinggang(\textit{vertebrae lumbales}) yang berfungsi sebagai kerangka penyangga utama tubuh manusia. Karena memikul beban tubuh yang besar, karakteristik tulang di bagian pinggang ini dirancang berukuran besar, tebal, dan padat.
+                    
+                    Sementara itu, pada bagian panggul terdapat lima ruas tulang(\textit{vertebrae sacrales}) yang menyatu menjadi satu kesatuan tulang tunggal yang disebut \textit{sacrum}. Terakhir, struktur ini ditutup oleh tulang ekor (\textit{coccyx}) yang berada di ujung bawah tulang belakang, yang umumnya terdiri dari empat ruas tulang yang saling menyatu.
+
+                    \begin{figure}[H]  
+                        \centering  
+                        \includegraphics[width=0.5\textwidth]{img/Veterbrae.png}
+                        \caption[Pembagian kelompok pada tulang belakang]{Pembagian kelompok pada tulang belakang} 
+                        \label{fig:vertebrae} 
+                    \end{figure}
+
+                    Beberapa kelainan yang sering terjadi pada struktur tulang belakang meliputi skoliosis, lordosis, dan osteoporosis. Kelainan pertama, yaitu skoliosis, ditandai dengan adanya lengkungan abnormal pada tulang belakang yang membengkok ke arah samping, baik ke sisi kiri maupun ke sisi kanan. Selanjutnya, terdapat lordosis yang merupakan suatu bentuk kelainan morfologi pada area \textit{lumbar} (pinggang). Kondisi ini menyebabkan tulang belakang di bagian tersebut melengkung secara berlebihan sehingga tampak sangat cekung ke arah dalam dan mendorong area perut ke depan.
+
+                    Di samping kelainan bentuk kelengkungan, tulang belakang juga sering mengalami osteoporosis. Pada kondisi ini, kualitas struktur jaringan tulang sebenarnya masih normal, tetapi massa atau kepadatan tulangnya sudah berkurang seiring dengan bertambahnya usia. Penurunan massa tulang ini umumnya mulai terjadi pada wanita ketika memasuki usia 50-an, sementara pada pria kondisi ini biasanya baru mulai sering ditemukan saat menginjak usia 70-an.
+
+                    \item Sendi\\
+                    Terdapat dua tipe persendian uatama antar tulang belakang, yaitu \textit{syshisis} dan sendi synovialis. Setiap ruas setidaknya memiliki 6 sendi diantara ruas lainnya. 
+                \end{itemize}
+                
+                 \item \textit{Pectorales}/Dada \\
+                 \textit{Cavitas thoracis} adalah rongga pada dada dengan ukuran tidak beraturan. Rongga ini berfungsi untuk mewadahi dan melindungi jantung, paru serta pembuluh besar,  
+                
+            \end{enumerate}
 
 
-\section{Detail Perkembangan Pengerjaan Skripsi}
-Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
-	\begin{enumerate}
-		\item \textbf{Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll).}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Survei sudah dilakukan sebanyak 3x pada tanggal X, Y dan Z. Pada kunjungan pertama, diperhaitkan denah museum dan dibuat sketsa berdasarkan pengamatan. Pada kunjunga kedua, bertemu dengan bagian humas museum dan berhasil mendapatkan denah serta melakukan wawancara. Hasil wawancara sudah dibuat dan ada softcopy-nya. Pada kunjungan ketiga, secara khusus dilihat perilaku pengunjung. Masih direncakanan 2x kunjungan lagi. Bukti-bukti kunjungan dapat dilihat di lampiran
-		
-		\item \textbf{Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
+        
+             \item \textbf{Melakukan studi litelatur mengenai WebGL sebagai \textit{Application Programming Interface} (API) untuk menampilkan grafis 3D pada web browser}.\\
+             {\bf Status :} Ada sejak rencana kerja skripsi.\\
+             {\bf Hasil :} Studi literatur serta pembelajaran yang dilakukan didasarkan dari dokumentasi WebGL
 
-		\item \textbf{Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
+            WebGL (\textit{Web Graphics Library}) berperan sebagai \textit{API} JavaScript yang memungkinkan browser merender grafis 2D dan 3D tanpa memerlukan \textit{plug-in }tambahan dengan memanfaatkan unit pemrosesan grafis (GPU). 
+           \begin{itemize}
+                \item{Tipe Data WebGL}
+                \begin{itemize}
+                    \item \texttt{GLenum}: \textit{unsigned long} (digunakan untuk enumerasi).
+                    \item \texttt{GLboolean}: \textit{boolean} (nilai logika benar atau salah).
+                    \item \texttt{GLbitfield}: \textit{unsigned long} (untuk operasi \textit{bitmask}).
+                    \item \texttt{GLbyte}: \textit{byte} (bilangan bulat bertanda 8-bit).
+                    \item \texttt{GLshort}: \textit{short} (bilangan bulat bertanda 16-bit).
+                    \item \texttt{GLint}: \textit{long} (bilangan bulat bertanda 32-bit).
+                    \item \texttt{GLsizei}: \textit{long} (ukuran atau jumlah, non-negatif).
+                    \item \texttt{GLintptr}: \textit{long long} (digunakan untuk alamat memori atau \textit{offset}).
+                    \item \texttt{GLsizeiptr}: \textit{long long} (ukuran dalam \textit{bytes} untuk operasi \textit{buffer}).
+                    \item \texttt{GLubyte}: \textit{octet} (bilangan bulat tak bertanda 8-bit).
+                    \item \texttt{GLushort}: \textit{unsigned short} (bilangan bulat tak bertanda 16-bit).
+                    \item \texttt{GLuint}: \textit{unsigned long} (bilangan bulat tak bertanda 32-bit).
+                    \item \texttt{GLfloat}: \textit{unrestricted float} (bilangan titik mengambang 32-bit).
+                    \item \texttt{GLclampf}: \textit{unrestricted float} (nilai \textit{float} yang biasanya dibatasi dalam rentang $[0, 1]$).
+                \end{itemize}
+            
+                \item{WebGLContextAttributes}
+                \label{subsec:WebGLContextAttributes}
+            
+                    \textit{WebGLContextAttributes} adalah sebuah \textit{dictionary} yang berisi atribut untuk permukaan gambar (\textit{drawing surface}). Objek ini dilewatkan sebagai parameter kedua pada fungsi \texttt{getContext} saat menginisialisasi konteks WebGL. Berikut adalah rincian atribut yang tersedia beserta nilai \textit{default}-nya:
+                    \begin{itemize}
+                        \item \texttt{alpha} (\textit{default}: \texttt{true}): Menentukan apakah kanvas memiliki \textit{buffer} alfa (transparansi).
+                        \item \texttt{depth} (\textit{default}: \texttt{true}): Menentukan apakah \textit{drawing buffer} memiliki \textit{depth buffer} sebesar minimal 16-bit untuk pengujian kedalaman 3D.
+                        \item \texttt{stencil} (\textit{default}: \texttt{false}): Menentukan apakah \textit{drawing buffer} memiliki \textit{stencil buffer} sebesar minimal 8-bit.
+                        \item \texttt{antialias} (\textit{default}: \texttt{true}): Menentukan apakah peramban akan melakukan \textit{anti-aliasing} (penghalusan tepi objek) jika didukung oleh sistem.
+                        \item \texttt{premultipliedAlpha} (\textit{default}: \texttt{true}): Menentukan apakah warna pada \textit{drawing buffer} disimpan dalam format \textit{premultiplied alpha}.
+                        \item \texttt{preserveDrawingBuffer} (\textit{default}: \texttt{false}): Jika bernilai \texttt{false}, isi \textit{buffer} akan dihapus secara otomatis setiap kali selesai dilakukan rendering. Jika \texttt{true}, isi \textit{buffer} akan tetap ada sampai dihapus secara manual.
+                        \item \texttt{preferLowPowerToHighPerformance} (\textit{default}: \texttt{false}): Memberikan petunjuk kepada sistem untuk lebih memprioritaskan efisiensi daya dibandingkan performa tinggi.
+                        \item \texttt{failIfMajorPerformanceCaveat} (\textit{default}: \texttt{false}): Jika bernilai \texttt{true}, pembuatan konteks WebGL akan gagal jika performa sistem dianggap sangat rendah (misalnya rendering melalui CPU).
+                    \end{itemize}
+            
+                \item{Objek Utama WebGL}
+                \label{subsec:objek_utama_webgl}
+            
+                    Setelah konteks WebGL berhasil diinisialisasi dengan atribut yang ditentukan, pengelolaan sumber daya grafis dilakukan melalui sekumpulan objek khusus. Seluruh objek di bawah ini merupakan turunan dari \texttt{WebGLObject} yang merepresentasikan sumber daya yang dialokasikan di dalam memori GPU (\textit{Graphics Processing Unit}):
+                    \begin{itemize}
+                        \item \texttt{WebGLBuffer}: Digunakan untuk menyimpan data biner seperti posisi titik (\textit{vertex}), warna, atau indeks yang akan diproses oleh GPU.
+                        \item \texttt{WebGLFramebuffer} dan \texttt{WebGLRenderbuffer}: Objek yang digunakan untuk teknik rendering tingkat lanjut, seperti \textit{off-screen rendering} atau \textit{post-processing}, di mana hasil gambar tidak langsung ditampilkan ke layar.
+                        \item \texttt{WebGLProgram}: Wadah gabungan antara \textit{Vertex Shader} dan \textit{Fragment Shader} yang telah melalui proses kompilasi dan siap untuk dieksekusi secara paralel oleh GPU.
+                        \item \texttt{WebGLShader}: Representasi dari unit kode \textit{shader} individual yang ditulis menggunakan bahasa GLSL (\textit{OpenGL Shading Language}) sebelum akhirnya digabungkan ke dalam sebuah program.
+                        \item \texttt{WebGLTexture}: Objek yang berfungsi untuk menyimpan data citra atau gambar yang akan dipetakan (\textit{mapping}) ke permukaan geometri tiga dimensi.
+                    \end{itemize}
+             \end{itemize}
+   
 
-		\item \textbf{Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
+        
+        	\item \textbf{Melakukan studi litelatur mengenai Three.js sebagai library WebGL.}
+            {\bf Status :} Ada sejak rencana kerja skripsi.\\
+        	{\bf Hasil  :} Studi literatur serta pembelajaran yang dilakukan didasarkan dari dokumentasi Three.js
 
-		\item \textbf{Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
+            \begin{itemize}
+                 \item{Instalasi dan Konfigurasi Three.js}
+                  \label{subsec:instalasi_threejs}
+            
+                    Instalasi \textit{Three.js} dilakukan menggunakan metode \textit{Import Maps}. Metode ini merupakan standar modern pada peramban (\textit{browser}) yang memungkinkan pemanggilan modul JavaScript langsung dari \textit{Content Delivery Network} (CDN) tanpa memerlukan proses instalasi lokal yang kompleks menggunakan \textit{build tools} atau \textit{Node Package Manager} (NPM).
+                    
+                 \item{Konfigurasi Import Maps}
+                    \textit{Import maps} digunakan untuk mendefinisikan alias dari alamat URL pustaka \textit{Three.js}. Dengan konfigurasi ini, kode program dapat memanggil \textit{Three.js} seolah-olah pustaka tersebut berada di dalam direktori lokal. 
+            
+            
+                    \begin{lstlisting}[language=HTML, caption={Konfigurasi Import Maps Three.js}, xleftmargin=0pt]
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@v0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@v0.160.0/examples/jsm/"
+    }
+  }
+</script>
+                    \end{lstlisting}
+                    
+            
+                \item{Struktur Pemanggilan Modul}
+                    Setelah konfigurasi \textit{import maps} ditetapkan, komponen utama dan modul tambahan (\textit{addons}) dapat diimpor ke dalam skrip JavaScript. Penggunaan modul tambahan sangat krusial dalam visualisasi anatomi, terutama untuk memuat model 3D dan mengatur kontrol kamera.
+                    \begin{itemize}
+                        \item Modul Inti (\textit{Core}): Digunakan untuk membuat \textit{scene}, kamera, dan \textit{renderer}.
+                        \item GLTFLoader: Modul tambahan yang digunakan untuk memuat aset model 3D anatomi manusia dalam format \texttt{.gltf} atau \texttt{.glb}.
+                        \item OrbitControls: Modul yang memungkinkan pengguna melakukan rotasi dan perbesaran (\textit{zoom}) pada model anatomi secara interaktif.
+                    \end{itemize}
+                    
+                    \begin{lstlisting}[language=HTML, caption={Pemanggilan Modul Three.js}]
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+                    \end{lstlisting}
+                    
+            
+                 \item{Dasar Pembentukan Adegan}
+                 \label{subsec:dasar_scene}
+            
+                    Terdapat tiga komponen utama yang wajib diinisialisasi agar sebuah objek 3D dapat ditampilkan pada peramban web. Ketiga komponen tersebut membentuk sebuah ekosistem yang saling bergantung:
+            
+                    \begin{enumerate}
+                        \item \textit{Scene} (Adegan): Berfungsi sebagai wadah utama (\textit{container}) tempat diletakkannya seluruh objek, lampu, dan latar belakang.
+                        \item \textit{Camera} (Kamera): Menentukan sudut pandang pengguna terhadap \textit{scene}. Jenis yang paling umum digunakan adalah \textit{PerspectiveCamera} yang meniru cara mata manusia melihat (objek jauh terlihat lebih kecil).
+                        \item \textit{Renderer}: Alat yang bertugas mengambil data dari \textit{Scene} melalui sudut pandang \textit{Camera} dan menggambarnya secara teknis ke dalam elemen \texttt{<canvas>} di HTML menggunakan \textit{WebGL}.
+                    \end{enumerate}
+                    
+                    \begin{lstlisting}[language=JavaScript, caption={Inisialisasi Scene, Camera, dan Renderer}]
+function init() {
 
-		\item \textbf{Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)}\\
-		{\bf Status :} dihapuskan/tidak dikerjakan \\
-		{\bf Hasil :} berdasarkan analisis singkat, tidak dilakukan analisis lebih jauh karena tidak diperlukan struktur data baru, karena sudah disediakan oleh OpenSteer versi terbaru
+    const scene = new THREE.Scene();
 
-		\item \textbf{Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer} \\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
+    const fov = 75;
+    const aspect = window.innerWidth / window.innerHeight;
+    const near = 0.1;
+    const far = 1000;
 
-		\item \textbf{Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}
-
-		\item \textbf{Menulis dokumen skripsi}\\
-		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} \lipsum[1]
-		
-		\item \textbf{Mempelajari cara menggunakan fitur manipulasi obstacle yang disediakan oleh framework Opensteer versi terbaru}\\
-		{\bf Status :} baru ditambahkan pada semester ini\\
-		{\bf Hasil :} baru direncanakan karena framework Opensteer versi paling akhir baru selesai diinstall dan dilihat-lihat bagian contoh-contoh simulasinya
-		
-
-	\end{enumerate}
+    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    camera.position.set(0, 2, 3);
+  
+    const renderer = new THREE.WebGLRenderer({ 
+        antialias: true
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+}
+                    \end{lstlisting}
+            
+                \item{\textit{Load} Model 3D}
+                 \label{subsec:loading_models}
+            
+                    Proses integrasi aset visual ke dalam sistem dilakukan dengan memuat model eksternal menggunakan \textit{loader} spesifik. Berdasarkan standar dokumentasi \textit{Three.\-js} \footnote{\url{https://threejs.org/manual/#en/loading-3d-models} (diakses pada 1 April 2026)}, format yang paling disarankan untuk keperluan web adalah \textit{GLTF} (\textit{Graphics Language Transmission Format}) karena efisiensinya dalam pengiriman data melalui jaringan.
+            
+                \item{Implementasi GLTFLoader}
+                    Untuk menangani berkas format .gltf atau .glb, digunakan modul \textit{GLTFLoader}. Proses pemuatan dilakukan secara asinkron dengan struktur kode 
+                    
+                    \begin{lstlisting}[language=JavaScript, caption={Implementasi Pemuatan Model GLTF}]
+const loader = new GLTFLoader();
+loader.load("./tes.glb", 
+    (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
+        console.log("Model berhasil dimuat!");
+    }
+);
+                    \end{lstlisting}
+                    
+                \item{Jenis Pencahayaan}
+                 \label{subsec:jenis_cahaya}
+            
+                    Pencahayaan dalam \textit{Three.js} diklasifikasikan berdasarkan cara cahaya tersebut dipancarkan dan pengaruhnya terhadap objek di dalam \textit{scene}. Berikut adalah jenis-jenis sumber cahaya yang digunakan untuk meningkatkan kualitas visualisasi:
+            
+                    \begin{enumerate}
+                        \item \textit{AmbientLight} \\
+                        Cahaya ini menerangi seluruh objek di dalam \textit{scene} secara merata dari segala arah tanpa memiliki titik asal tertentu.
+                        \begin{itemize}
+                            \item Fungsi: Menghilangkan bayangan yang terlalu gelap (\textit{pitch black}) agar detail organ di area yang tidak terkena cahaya langsung tetap terlihat.
+                            \item Karakteristik: Tidak memiliki arah, tidak menghasilkan bayangan (\textit{shadows}), dan hanya menerima dua parameter (\textit{color} dan \textit{intensity}).
+                        \end{itemize}
+                    
+                        \item \textit{DirectionalLight} \\
+                        Cahaya yang memancar dari satu arah tertentu secara paralel, menyerupai karakteristik sinar matahari.
+                        \begin{itemize}
+                            \item Fungsi: Memberikan dimensi visual dan mempertegas bentuk anatomis objek melalui kontras cahaya.
+                            \item Karakteristik: Memiliki sinar yang sejajar dan sangat efektif untuk memberikan efek kedalaman (\textit{depth}) pada model dari sudut tertentu.
+                        \end{itemize}
+            
+                        \item \textit{HemisphereLight} \\
+                        Sumber cahaya yang diletakkan tepat di atas \textit{scene}, dengan gradasi warna yang berbeda antara bagian atas dan bawah.
+                        \begin{itemize}
+                            \item Fungsi: Memberikan efek pencahayaan lingkungan yang lebih natural dan halus dibandingkan \textit{AmbientLight}.
+                            \item Karakteristik: Menerima tiga parameter (\textit{skyColor}, \textit{groundColor}, dan \textit{intensity}). Sangat berguna untuk simulasi \textit{ambient} yang lebih kompleks tanpa membebani performa.
+                        \end{itemize}
+                
+                        \item \textit{PointLight} \\
+                        Cahaya yang memancar dari satu titik pusat ke segala arah, serupa dengan cara kerja bola lampu pijar.
+                        \begin{itemize}
+                            \item Fungsi: Memberikan efek fokus atau penekanan pada area organ spesifik.
+                            \item Karakteristik: Memiliki parameter \textit{decay} dan \textit{distance}, di mana intensitas cahaya akan meredup seiring dengan bertambahnya jarak dari sumber cahaya.
+                        \end{itemize}
+                
+                        \item \textit{SpotLight} \\
+                        Cahaya yang memancar dari satu titik ke arah tertentu dalam bentuk kerucut (\textit{cone}).
+                        \begin{itemize}
+                            \item Fungsi: Digunakan untuk pencahayaan yang sangat spesifik, terfokus, dan dramatis pada bagian anatomi tertentu.
+                            \item Karakteristik: Memiliki parameter \textit{angle} (lebar sorotan) dan \textit{penumbra} (kehalusan tepi cahaya). Cahaya ini dapat dikonfigurasi untuk menghasilkan bayangan yang tajam.
+                        \end{itemize}
+                    \end{enumerate}
+             \end{itemize}    
+        
+	      \end{enumerate}
 
 \section{Pencapaian Rencana Kerja}
-Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah sebagai berikut:
+Langkah-langkah kerja yang berhasil diselesaikan dalam Tugas Akhir 1 ini adalah sebagai berikut:
 \begin{enumerate}
 \item
 \item
@@ -129,12 +356,12 @@ Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah seba
 
 \section{Kendala yang Dihadapi}
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
-Kendala - kendala yang dihadapi selama mengerjakan skripsi :
+Kendala - kendala yang dihadapi selama mengerjakan Tugas Akhir :
 \begin{itemize}
-	\item Terlalu banyak melakukan prokratinasi
-	\item Terlalu banyak godaan berupa hiburan (game, film, dll)
-	\item Skripsi diambil bersamaan dengan kuliah ASD karena selama 5 semester pertama kuliah tersebut sangat dihindari dan tidak diambil, dan selama 4 semester terakhir kuliah tersebut selalu mendapat nilai E
-	\item Mengalami kesulitan pada saat sudah mulai membuat program komputer karena selama ini selalu dibantu teman
+	\item Terlalu banyak godaan berupa hiburan (game, film, dll) 
+    \item Memahami dan mendalami bahasa ilmiah dari setiap bagian anatomi manusia 
+    \item \textit{Overthinking} selama pengerjaan skripsi karena selalu merasa tidak cukup baik
+
 \end{itemize}
 
 \vspace{1cm}
@@ -160,4 +387,3 @@ Menyetujui, \\
 \vspace{2cm} Nama: \pembA \\ Pembimbing Tunggal
 }
 \end{document}
-
