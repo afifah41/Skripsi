@@ -103,12 +103,10 @@ Terdapat tiga komponen utama yang wajib diinisialisasi agar sebuah objek 3D dapa
     \item \textit{Renderer}: Alat yang bertugas mengambil data dari \textit{Scene} melalui sudut pandang \textit{Camera} dan menggambarnya secara teknis ke dalam elemen \texttt{<canvas>} di HTML menggunakan \textit{WebGL}.
 \end{enumerate}
 
-\begin{lstlisting}[language=JavaScript, caption={Perbaikan Inisialisasi Scene, Camera, dan Renderer}]
+\begin{lstlisting}[language=Java, caption={Perbaikan Inisialisasi Scene, Camera, dan Renderer}]
 function init() {
-    // 1. Membuat Adegan (Scene)
     const scene = new THREE.Scene();
 
-    // 2. Mengatur Kamera
     const fov = 75;
     const aspect = window.innerWidth / window.innerHeight;
     const near = 0.1;
@@ -117,10 +115,9 @@ function init() {
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     camera.position.set(0, 2, 3);
 
-    // 3. Mengatur Renderer dengan pengecekan ketersediaan DOM
     const renderer = new THREE.WebGLRenderer({ 
         antialias: true,
-        alpha: true // Opsional: jika ingin latar belakang transparan
+        alpha: true 
     });
     
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -137,13 +134,12 @@ function init() {
 \subsection{\textit{Load} Model 3D}
 \label{subsec:loading_models}
 
-Proses integrasi aset visual ke dalam sistem dilakukan dengan memuat model eksternal menggunakan \textit{loader} spesifik. Berdasarkan standar dokumentasi \textit{Three.js} \footnote{\url{https://threejs.org/manual/#en/loading-3d-models} (diakses pada 1 April 2026)}, format yang paling disarankan untuk keperluan web adalah \textit{GLTF} (\textit{Graphics Language Transmission Format}) karena efisiensinya dalam pengiriman data melalui jaringan.
+Proses integrasi aset visual ke dalam sistem dilakukan dengan memuat model eksternal menggunakan \textit{loader} spesifik. Berdasarkan standar dokumentasi \textit{Three.js} \footnote{\url{https://threejs.org/manual/\#en/loading-3d-models} (diakses pada 1 April 2026)}, format yang paling disarankan untuk keperluan web adalah \textit{GLTF} (\textit{Graphics Language Transmission Format}) karena efisiensinya dalam pengiriman data melalui jaringan.
 
 \subsubsection{Implementasi GLTFLoader}
 Untuk menangani berkas format .gltf atau .glb, digunakan modul \textit{GLTFLoader}. Proses pemuatan dilakukan secara asinkron dengan struktur kode sebagai berikut:
 
-\begin{lstlisting}[language=JavaScript, caption={Implementasi Pemuatan Model GLTF}]
-\textit{/LOAD MODEL}
+\begin{lstlisting}[language=Java, caption={Implementasi Pemuatan Model GLTF}]
 const loader = new GLTFLoader();
 loader.load("./tes.glb", 
     (gltf) => {
@@ -357,22 +353,22 @@ Peninjauan terhadap aspek legalitas aset dilakukan dengan membandingkan ketentua
 Sebagai gambaran awal, ringkasan perbandingan ketiga lisensi tersebut disajikan pada Tabel \ref{tab:perbandingan_lisensi}.
 
 \begin{table}[H]
-\centering
-\caption{Perbandingan Ketentuan Lisensi Aset Model 3D}
-\label{tab:perbandingan_lisensi}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|c|c|c|}
-\hline
-\textbf{Fitur / Ketentuan} & \textbf{Fab Standard License} & \textbf{CC BY 4.0} & \textbf{CC BY-SA 4.0} \\ \hline
-Penggunaan Komersial & Ya & Ya & Ya \\ \hline
-Modifikasi / Adaptasi & Ya & Ya & Ya \\ \hline
-Kewajiban Atribusi (Kredit) & Tidak Wajib & \textbf{Wajib} & \textbf{Wajib} \\ \hline
-Distribusi Ulang Aset Mentah & \textbf{Dilarang} & Ya & Ya (Lisensi Sama) \\ \hline
-Ketentuan \textit{ShareAlike} & Tidak & Tidak & \textbf{Ya} \\ \hline
-Jaminan / \textit{Warranty} & Tidak Ada & Tidak Ada & Tidak Ada \\ \hline
-Penerbit Lisensi & Epic Games & Creative Commons & Creative Commons \\ \hline
-\end{tabular}%
-}
+    \centering
+    \caption{Perbandingan Ketentuan Lisensi Aset Model 3D}
+    \label{tab:perbandingan_lisensi}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Fitur / Ketentuan} & \textbf{Fab Standard License} & \textbf{CC BY 4.0} & \textbf{CC BY-SA 4.0} \\ \hline
+        Penggunaan Komersial & Ya & Ya & Ya \\ \hline
+        Modifikasi / Adaptasi & Ya & Ya & Ya \\ \hline
+        Kewajiban Atribusi (Kredit) & Tidak Wajib & \textbf{Wajib} & \textbf{Wajib} \\ \hline
+        Distribusi Ulang Aset Mentah & \textbf{Dilarang} & Ya & Ya (Lisensi Sama) \\ \hline
+        Ketentuan \textit{ShareAlike} & Tidak & Tidak & \textbf{Ya} \\ \hline
+        Jaminan / \textit{Warranty} & Tidak Ada & Tidak Ada & Tidak Ada \\ \hline
+        Penerbit Lisensi & Epic Games & Creative Commons & Creative Commons \\ \hline
+    \end{tabular}%
+        }
 \end{table}
 
 Untuk memberikan pemahaman yang lebih mendalam mengenai batasan teknis dan hukum yang tertera pada tabel di atas, berikut adalah penjelasan dari setiap fitur atau ketentuan yang dianalisis:
