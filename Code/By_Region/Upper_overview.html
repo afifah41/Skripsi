@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upper Limb Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   
+    <link rel="stylesheet" href="../assets/view.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <header class="viewer-topbar">
+        <a href="Upper.html" class="back-link">&larr; Explore</a>
+    </header>
+
+    <main class="viewer-layout">
+        <aside class="info-panel">
+            <h1 class="info-title">Upper Limb</h1>
+            <p class="info-description">
+                Deskripsi mengenai struktur  manusia...
+            </p>
+        </aside>
+
+        <section class="canvas-panel" id="canvas-container">
+            <div class="top-part-banner" id="part-banner">
+                <div class="banner-title" id="banner-title">Upper Limb</div>
+                <div class="banner-subtitle" id="banner-subtitle">Uppper</div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { initAnatomyViewer } from "../assets/view.js";
+
+        initAnatomyViewer({
+            modelPath: "./Model/UpperLimb_overview.glb",
+            category: "Upper",
+            fallbackName: "Upper"
+        });
+    </script>
+</body>
+</html>

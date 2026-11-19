@@ -1,2 +1,9 @@
-Thumbs.db
-.DS_Store
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+/*.lof
+/*.lot
+/*.out
+/*.toc
